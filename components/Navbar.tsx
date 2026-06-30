@@ -18,8 +18,7 @@ export default function Navbar() {
           <a href="/contact" className="hover:text-gray-300">Contact</a>
           <a href="/cart" className="hover:text-gray-300">
             Cart {cartCount > 0 && `(${cartCount})`}
-          </a>
-        </div>
+          </a>        </div>
       </div>
     </nav>
   );

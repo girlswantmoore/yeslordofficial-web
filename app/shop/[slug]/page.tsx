@@ -33,21 +33,6 @@ export default function ProductPage({
 
   return (
     <main className="min-h-screen bg-black text-white">
-      <nav className="fixed left-0 top-0 z-50 w-full bg-black/70 backdrop-blur-md">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-8 py-6">
-          <a href="/" className="text-xl font-semibold uppercase tracking-[0.35em]">
-            YES LORD
-          </a>
-
-          <div className="flex gap-8 text-sm uppercase tracking-[0.2em]">
-            <a href="/shop">Shop</a>
-            <a href="/about">About</a>
-            <a href="/contact">Contact</a>
-            <a href="#">Cart</a>
-          </div>
-        </div>
-      </nav>
-
       <section className="mx-auto grid max-w-7xl gap-16 px-8 py-32 lg:grid-cols-2">
         <div>
           <div className="flex h-[750px] items-center justify-center bg-[#111] p-8">
