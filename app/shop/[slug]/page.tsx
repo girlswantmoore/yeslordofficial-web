@@ -97,7 +97,7 @@ const soldOutSizes: string[] =
           </a>
 
           <p className="mb-3 text-xs uppercase tracking-[0.3em] text-gray-500">
-            {product.category}
+          
           </p>
 
           <h1 className="mb-6 text-5xl font-bold">{product.name}</h1>
