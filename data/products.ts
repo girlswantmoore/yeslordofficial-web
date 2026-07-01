@@ -24,7 +24,7 @@ export const products = [
     category: "Shirts",
     name: "Yes Lord Arch Tee",
     price: 54.99,
-    thumbnail: "/products/arch-tee/arch-tee-black-green.jpg",
+    thumbnail: "/products/arch-tee/arch-tee-black-green1.jpg",
     description: "Premium cotton arch tee featuring the Yes Lord varsity logo.",
     sizes: ["S", "M", "L", "XL", "XXL"],
     colors: [
