@@ -105,8 +105,8 @@ export const products = [
 {
   name: "Orange",
   swatch: ["#F97316"],
-  front: "/products/zip-up/zipup-orange.jpg",
-  back: "/products/zip-up/zipup-orange.jpg",
+  front: "/products/zip-up/zipup-orange.front.jpg",
+  back: "/products/zip-up/zipup-orange.back.jpg",
   soldOut: true,
 },
       { name: "Green", swatch: ["#808000"], front: "/products/zip-up/zipup-green.jpg" },
