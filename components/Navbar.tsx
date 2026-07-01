@@ -30,7 +30,7 @@ export default function Navbar() {
   />
 </a>
           <div className="hidden gap-8 text-sm uppercase tracking-[0.2em] md:flex">
-            <a href="/shop" className="hover:text-gray-300">
+            <a href="/#shop" className="hover:text-gray-300">
               Shop
             </a>
             <a href="/about" className="hover:text-gray-300">
