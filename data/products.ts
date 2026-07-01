@@ -8,7 +8,7 @@ export const products = [
     description: "Premium cotton tee with front and back Yes Lord graphics.",
     sizes: ["S", "M", "L", "XL", "XXL"],
     colors: [
-            { name: "Black", swatch: ["#000000"], front: "/products/classic-tee/classic-tee-black-front.jpg", back: "/products/classic-tee/classic-tee-black-back.jpg" },
+      { name: "Black", swatch: ["#000000"], front: "/products/classic-tee/classic-tee-black-front.jpg", back: "/products/classic-tee/classic-tee-black-back.jpg" },
       { name: "Green", swatch: ["#166534"], front: "/products/classic-tee/classic-tee-green-front.jpg", back: "/products/classic-tee/classic-tee-green-back.jpg" },
       { name: "Blue", swatch: ["#2563EB"], front: "/products/classic-tee/classic-tee-blue-front.jpg", back: "/products/classic-tee/classic-tee-blue-back.jpg" },
       { name: "Yellow", swatch: ["#FACC15"], front: "/products/classic-tee/classic-tee-yellow-front.jpg", back: "/products/classic-tee/classic-tee-yellow-back.jpg" },
@@ -19,23 +19,45 @@ export const products = [
     ],
   },
 
-  {
-    slug: "arch-tee",
-    category: "Shirts",
-    name: "Yes Lord Arch Tee",
-    price: 54.99,
-    thumbnail: "/products/arch-tee/arch-tee-white-yellow.jpg",
-    description: "Premium cotton arch tee featuring the Yes Lord varsity logo.",
-    sizes: ["S", "M", "L", "XL", "XXL"],
-    colors: [
-      { name: "Black / Green", swatch: ["#000000", "#166534"], front: "/products/arch-tee/arch-tee-black-green1.jpg" },
-      { name: "White / Yellow", swatch: ["#FFFFFF", "#FACC15"], front: "/products/arch-tee/arch-tee-white-yellow.jpg" },
-      { name: "White / Green", swatch: ["#FFFFFF", "#166534"], front: "/products/arch-tee/arch-tee-white-green.jpg" },
-      { name: "Red / Green", swatch: ["#DC2626", "#166534"], front: "/products/arch-tee/arch-tee-red-green.jpg" },
-      { name: "Green / Yellow", swatch: ["#166534", "#FACC15"], front: "/products/arch-tee/arch-tee-green-yellow.jpg" },
-    ],
-  },
-
+{
+  slug: "arch-tee",
+  category: "Shirts",
+  name: "Yes Lord Arch Tee",
+  price: 54.99,
+  thumbnail: "/products/arch-tee/arch-tee-white-yellow.jpg",
+  description: "Premium cotton arch tee featuring the Yes Lord varsity logo.",
+  sizes: ["S", "M", "L", "XL", "XXL"],
+  colors: [
+    {
+      name: "Black / Green",
+      swatch: ["#000000", "#166534"],
+      front: "/products/arch-tee/arch-tee-black-green.jpg",
+      soldOutSizes: ["S"],
+    },
+    {
+      name: "White / Yellow",
+      swatch: ["#FFFFFF", "#FACC15"],
+      front: "/products/arch-tee/arch-tee-white-yellow.jpg",
+    },
+    {
+      name: "White / Green",
+      swatch: ["#FFFFFF", "#166534"],
+      front: "/products/arch-tee/arch-tee-white-green.jpg",
+    },
+    {
+      name: "Red / Green",
+      swatch: ["#DC2626", "#166534"],
+      front: "/products/arch-tee/arch-tee-red-green.jpg",
+      soldOut: true,
+    },
+    {
+      name: "Green / Yellow",
+      swatch: ["#166534", "#FACC15"],
+      front: "/products/arch-tee/arch-tee-green-yellow.jpg",
+      soldOutSizes: ["XXL"],
+    },
+  ],
+},
   {
     slug: "classic-hoodie",
     category: "Hoodies",
@@ -105,7 +127,7 @@ export const products = [
     colors: [
       {  name: "Black", swatch: ["#000000"], front: "/products/workwear-jacket/workwear-black-front.jpg",
         back: "/products/workwear-jacket/workwear-black-back.jpg" },
-{  name: "Navy", swatch: ["#000080"], front: "/products/workwear-jacket/workwear-navy-front.jpg",
+      {  name: "Navy", swatch: ["#000080"], front: "/products/workwear-jacket/workwear-navy-front.jpg",
         back: "/products/workwear-jacket/workwear-navy-back.jpg" },
 
     ],
@@ -132,7 +154,6 @@ export const products = [
       name: "Mint",
       front: "/products/bucket-hat/bucket-mint.jpg",
       swatch: ["#98E0C0"],
-      soldOut: true,
     },
     {
       name: "Camo",
