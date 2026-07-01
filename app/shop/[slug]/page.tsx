@@ -11,7 +11,6 @@ export default function ProductPage({
 }) {
   const { slug } = use(params);
   const product = products.find((item) => item.slug === slug);
-
   const { addToCart } = useCart();
 
   if (!product) {
@@ -28,6 +27,8 @@ export default function ProductPage({
 
   const selectedColor = product.colors[selectedColorIndex];
   const hasBack = "back" in selectedColor && selectedColor.back;
+  const isSoldOut = "soldOut" in selectedColor && selectedColor.soldOut;
+
   const image =
     view === "back" && hasBack ? selectedColor.back : selectedColor.front;
 
@@ -137,8 +138,11 @@ export default function ProductPage({
               <button
                 key={size}
                 onClick={() => setSelectedSize(size)}
+                disabled={isSoldOut}
                 className={`border px-5 py-3 transition ${
-                  selectedSize === size
+                  isSoldOut
+                    ? "cursor-not-allowed border-gray-800 text-gray-700 line-through"
+                    : selectedSize === size
                     ? "border-white bg-white text-black"
                     : "border-gray-600 hover:border-white"
                 }`}
@@ -148,24 +152,32 @@ export default function ProductPage({
             ))}
           </div>
 
-<button
-  onClick={() => {
-    addToCart({
-      slug: product.slug,
-      name: product.name,
-      price: product.price,
-      image,
-      color: selectedColor.name,
-      size: selectedSize,
-      quantity: 1,
-    });
+          <button
+            disabled={isSoldOut}
+            onClick={() => {
+              if (isSoldOut) return;
 
-    alert("Added to cart!");
-  }}
-  className="bg-white py-4 uppercase tracking-[0.3em] text-black transition hover:bg-gray-200"
->
-  Add To Cart
-</button>
+              addToCart({
+                slug: product.slug,
+                name: product.name,
+                price: product.price,
+                image,
+                color: selectedColor.name,
+                size: selectedSize,
+                quantity: 1,
+              });
+
+              alert("Added to cart!");
+            }}
+            className={`py-4 uppercase tracking-[0.3em] transition ${
+              isSoldOut
+                ? "cursor-not-allowed bg-gray-800 text-gray-500"
+                : "bg-white text-black hover:bg-gray-200"
+            }`}
+          >
+            {isSoldOut ? "Sold Out" : "Add To Cart"}
+          </button>
+
           <p className="mt-10 leading-8 text-gray-400">
             {product.description}
           </p>

@@ -79,7 +79,13 @@ export const products = [
     description: "Premium zip-up hoodie featuring the signature Yes Lord design.",
     sizes: ["S", "M", "L", "XL", "XXL"],
     colors: [
-      { name: "Orange", swatch: ["#F97316"], front: "/products/zip-up/zipup-orange-front.jpg", back: "/products/zip-up/zipup-orange-back.jpg" },
+{
+  name: "Orange",
+  swatch: ["#F97316"],
+  front: "/products/zip-up/zipup-orange-front.jpg",
+  back: "/products/zip-up/zipup-orange-back.jpg",
+  soldOut: true,
+},
       { name: "Green", swatch: ["#808000"], front: "/products/zip-up/zipup-green.jpg" },
       { name: "Beige", swatch: ["#D6C7B8"], front: "/products/zip-up/zipup-beige.jpg" },
       { name: "Blue", swatch: ["#67E8F9"], front: "/products/zip-up/zipup-blue.jpg" },
