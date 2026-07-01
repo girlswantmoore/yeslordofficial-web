@@ -36,25 +36,6 @@ export const products = [
     ],
   },
 
-{
-  slug: "graphic-tee",
-  category: "Shirts",
-  name: "Yes Lord Waverunner Tee",
-  price: 44.99,
-  thumbnail: "/products/graphic-tee/waverunner-front.jpg",
-  description:
-    "Premium heavyweight cotton tee featuring the exclusive Waverunner graphic.",
-  sizes: ["S", "M", "L", "XL", "XXL"],
-  colors: [
-    {
-      name: "Black",
-      front: "/products/graphic-tee/waverunner-front.jpg",
-      back: "/products/graphic-tee/waverunner-back.jpg",
-      swatch: ["#1a1a1a"],
-    },
-  ],
-},
-
   {
     slug: "classic-hoodie",
     category: "Hoodies",
