@@ -121,11 +121,13 @@ export const products = [
       front: "/products/bucket-hat/bucket-denim-front.jpg",
       back: "/products/bucket-hat/bucket-denim-back.jpg",
       swatch: ["#3f5f7f", "#d6d6d6"],
+      soldOut: true,
     },
     {
       name: "Camo",
       front: "/products/bucket-hat/bucket-camo.jpg",
       swatch: ["#3f4a2f", "#7a6a3a", "#1f2418"],
+      soldOut: true,
     },
   ],
 },
