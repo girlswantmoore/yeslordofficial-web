@@ -1,7 +1,6 @@
 export const products = [
   {
     slug: "classic-tee",
-    category: "Select for more options",
     name: "Yes Lord Classic Tee",
     price: 44.99,
     thumbnail: "/products/classic-tee/classic-tee-black-front.jpg",
@@ -21,7 +20,6 @@ export const products = [
 
 {
   slug: "arch-tee",
-  category: "Select for more options",
   name: "Yes Lord Arch Tee",
   price: 54.99,
   thumbnail: "/products/arch-tee/arch-tee-white-yellow.jpg",
@@ -60,7 +58,6 @@ export const products = [
 },
   {
     slug: "classic-hoodie",
-    category: "Select for more options",
     name: "Yes Lord Classic Hoodie",
     price: 59.99,
     thumbnail: "/products/classic-hoodie/classic-hoodie-grey.jpg",
@@ -76,7 +73,6 @@ export const products = [
 
   {
     slug: "heavyweight-hoodie",
-    category: "Select for more options",
     name: "Yes Lord Heavyweight Hoodie",
     price: 64.99,
     thumbnail: "/products/heavyweight-hoodie/heavyweight-mint.jpg",
@@ -95,7 +91,6 @@ export const products = [
 
   {
     slug: "zip-up",
-    category: "Select for more options",
     name: "Yes Lord Zip-Up Hoodie",
     price: 64.99,
     thumbnail: "/products/zip-up/zipup-orange-front.jpg",
@@ -118,7 +113,6 @@ export const products = [
 
   {
     slug: "workwear-jacket",
-    category: "Select for more options",
     name: "Yes Lord Workwear Jacket",
     price: 79.99,
     thumbnail: "/products/workwear-jacket/workwear-navy-front.jpg",
@@ -135,7 +129,6 @@ export const products = [
 
 {
   slug: "bucket-hat",
-  category: "Select for more options",
   name: "Yes Lord Bucket Hat",
   price: 34.99,
   thumbnail: "/products/bucket-hat/bucket-denim-front.jpg",
@@ -166,7 +159,6 @@ export const products = [
 
 {
     slug: "trucker-hat",
-    category: "Select for more options",
     name: "Yes Lord Trucker Hat",
     price: 29.99,
     thumbnail: "/products/trucker-hat/trucker-green.jpg",
@@ -182,7 +174,6 @@ export const products = [
 
   {
     slug: "socks",
-    category: "Accessories",
     name: "Yes Lord Socks",
     price: 14.99,
     thumbnail: "/products/socks/socks-white.jpg",

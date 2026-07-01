@@ -96,10 +96,6 @@ const soldOutSizes: string[] =
             ← Back to Shop
           </a>
 
-          <p className="mb-3 text-xs uppercase tracking-[0.3em] text-gray-500">
-          
-          </p>
-
           <h1 className="mb-6 text-5xl font-bold">{product.name}</h1>
 
           <p className="mb-10 text-3xl">${product.price.toFixed(2)}</p>

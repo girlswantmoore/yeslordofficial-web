@@ -56,10 +56,6 @@ className="group"            >
                 />
               </div>
 
-              <p className="mt-5 text-xs uppercase tracking-[0.25em] text-gray-500">
-                {product.category}
-              </p>
-
               <h2 className="mt-2 text-xl font-semibold group-hover:text-gray-300">
                 {product.name}
               </h2>
