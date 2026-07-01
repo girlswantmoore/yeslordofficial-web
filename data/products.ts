@@ -96,7 +96,7 @@ export const products = [
   {
     slug: "spiral-jacket",
     category: "Jackets",
-    name: "Yes Lord Spiral Jacket",
+    name: "Yes Lord Workwear Jacket",
     price: 79.99,
     thumbnail: "/products/spiral-jacket/spiral-jacket-front.jpg",
     description: "Premium jacket featuring the signature Yes Lord spiral graphic.",
