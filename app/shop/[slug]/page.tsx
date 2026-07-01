@@ -26,8 +26,15 @@ export default function ProductPage({
   const [view, setView] = useState<"front" | "back">("front");
 
   const selectedColor = product.colors[selectedColorIndex];
+
   const hasBack = "back" in selectedColor && selectedColor.back;
   const isSoldOut = "soldOut" in selectedColor && selectedColor.soldOut;
+
+const soldOutSizes: string[] =
+  "soldOutSizes" in selectedColor
+    ? (selectedColor.soldOutSizes as string[])
+    : [];
+  const isSelectedSizeSoldOut = soldOutSizes.includes(selectedSize);
 
   const image =
     view === "back" && hasBack ? selectedColor.back : selectedColor.front;
@@ -107,6 +114,7 @@ export default function ProductPage({
                 key={color.name}
                 onClick={() => {
                   setSelectedColorIndex(index);
+                  setSelectedSize(product.sizes[0]);
                   setView("front");
                 }}
                 title={color.name}
@@ -134,28 +142,32 @@ export default function ProductPage({
           </h2>
 
           <div className="mb-10 flex flex-wrap gap-4">
-            {product.sizes.map((size) => (
-              <button
-                key={size}
-                onClick={() => setSelectedSize(size)}
-                disabled={isSoldOut}
-                className={`border px-5 py-3 transition ${
-                  isSoldOut
-                    ? "cursor-not-allowed border-gray-800 text-gray-700 line-through"
-                    : selectedSize === size
-                    ? "border-white bg-white text-black"
-                    : "border-gray-600 hover:border-white"
-                }`}
-              >
-                {size}
-              </button>
-            ))}
+            {product.sizes.map((size) => {
+              const isThisSizeSoldOut = soldOutSizes.includes(size);
+
+              return (
+                <button
+                  key={size}
+                  onClick={() => setSelectedSize(size)}
+                  disabled={isSoldOut || isThisSizeSoldOut}
+                  className={`border px-5 py-3 transition ${
+                    isSoldOut || isThisSizeSoldOut
+                      ? "cursor-not-allowed border-gray-800 text-gray-700 line-through"
+                      : selectedSize === size
+                      ? "border-white bg-white text-black"
+                      : "border-gray-600 hover:border-white"
+                  }`}
+                >
+                  {size}
+                </button>
+              );
+            })}
           </div>
 
           <button
-            disabled={isSoldOut}
+            disabled={isSoldOut || isSelectedSizeSoldOut}
             onClick={() => {
-              if (isSoldOut) return;
+              if (isSoldOut || isSelectedSizeSoldOut) return;
 
               addToCart({
                 slug: product.slug,
@@ -170,12 +182,12 @@ export default function ProductPage({
               alert("Added to cart!");
             }}
             className={`py-4 uppercase tracking-[0.3em] transition ${
-              isSoldOut
+              isSoldOut || isSelectedSizeSoldOut
                 ? "cursor-not-allowed bg-gray-800 text-gray-500"
                 : "bg-white text-black hover:bg-gray-200"
             }`}
           >
-            {isSoldOut ? "Sold Out" : "Add To Cart"}
+            {isSoldOut || isSelectedSizeSoldOut ? "Sold Out" : "Add To Cart"}
           </button>
 
           <p className="mt-10 leading-8 text-gray-400">
