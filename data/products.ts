@@ -76,7 +76,7 @@ export const products = [
     category: "Hoodies",
     name: "Yes Lord Zip-Up Hoodie",
     price: 64.99,
-    thumbnail: "/products/zip-up/zipup-orange.jpg",
+    thumbnail: "/products/zip-up/zipup-orange-front.jpg",
     description: "Premium zip-up hoodie featuring the signature Yes Lord design.",
     sizes: ["S", "M", "L", "XL", "XXL"],
     colors: [
@@ -99,7 +99,7 @@ export const products = [
     category: "Jackets",
     name: "Yes Lord Workwear Jacket",
     price: 79.99,
-    thumbnail: "/products/workwear-jacket/spiral-jacket-front.jpg",
+    thumbnail: "/products/workwear-jacket/workwear-navy-front.jpg",
     description: "Premium jacket featuring the signature Yes Lord spiral graphic.",
     sizes: ["S", "M", "L", "XL", "XXL", "XXXL"],
     colors: [
