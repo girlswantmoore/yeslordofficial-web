@@ -14,8 +14,7 @@ export default function ShopPage() {
               href={`/shop/${product.slug}`}
               className="group"            
               >
-              <div className="aspect-[3/4] overflow-hidden rounded-lg bg-zinc-900">
-                <img
+              <div className="aspect-[3/4] overflow-hidden rounded-lg bg-white">                <img
                   src={product.thumbnail}
                   alt={product.name}
                   className="h-full w-full object-contain transition duration-500 group-hover:scale-105"
