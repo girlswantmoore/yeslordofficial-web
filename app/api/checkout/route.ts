@@ -6,6 +6,98 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
 export async function POST(request: NextRequest) {
   const cart = await request.json();
 
+  const subtotal = cart.reduce(
+    (sum: number, item: any) => sum + item.price * item.quantity,
+    0
+  );
+
+  const shippingOptions =
+    subtotal >= 100
+      ? [
+          {
+            shipping_rate_data: {
+              type: "fixed_amount" as const,
+              fixed_amount: {
+                amount: 0,
+                currency: "usd",
+              },
+              display_name: "Free Shipping",
+              delivery_estimate: {
+                minimum: {
+                  unit: "business_day" as const,
+                  value: 3,
+                },
+                maximum: {
+                  unit: "business_day" as const,
+                  value: 7,
+                },
+              },
+            },
+          },
+          {
+            shipping_rate_data: {
+              type: "fixed_amount" as const,
+              fixed_amount: {
+                amount: 1499,
+                currency: "usd",
+              },
+              display_name: "Express Shipping",
+              delivery_estimate: {
+                minimum: {
+                  unit: "business_day" as const,
+                  value: 1,
+                },
+                maximum: {
+                  unit: "business_day" as const,
+                  value: 3,
+                },
+              },
+            },
+          },
+        ]
+      : [
+          {
+            shipping_rate_data: {
+              type: "fixed_amount" as const,
+              fixed_amount: {
+                amount: 799,
+                currency: "usd",
+              },
+              display_name: "Standard Shipping",
+              delivery_estimate: {
+                minimum: {
+                  unit: "business_day" as const,
+                  value: 3,
+                },
+                maximum: {
+                  unit: "business_day" as const,
+                  value: 7,
+                },
+              },
+            },
+          },
+          {
+            shipping_rate_data: {
+              type: "fixed_amount" as const,
+              fixed_amount: {
+                amount: 1499,
+                currency: "usd",
+              },
+              display_name: "Express Shipping",
+              delivery_estimate: {
+                minimum: {
+                  unit: "business_day" as const,
+                  value: 1,
+                },
+                maximum: {
+                  unit: "business_day" as const,
+                  value: 3,
+                },
+              },
+            },
+          },
+        ];
+
   const session = await stripe.checkout.sessions.create({
     mode: "payment",
 
@@ -34,48 +126,7 @@ export async function POST(request: NextRequest) {
       enabled: true,
     },
 
-    shipping_options: [
-      {
-        shipping_rate_data: {
-          type: "fixed_amount",
-          fixed_amount: {
-            amount: 799,
-            currency: "usd",
-          },
-          display_name: "Standard Shipping",
-          delivery_estimate: {
-            minimum: {
-              unit: "business_day",
-              value: 3,
-            },
-            maximum: {
-              unit: "business_day",
-              value: 7,
-            },
-          },
-        },
-      },
-      {
-        shipping_rate_data: {
-          type: "fixed_amount",
-          fixed_amount: {
-            amount: 1499,
-            currency: "usd",
-          },
-          display_name: "Express Shipping",
-          delivery_estimate: {
-            minimum: {
-              unit: "business_day",
-              value: 1,
-            },
-            maximum: {
-              unit: "business_day",
-              value: 3,
-            },
-          },
-        },
-      },
-    ],
+    shipping_options: shippingOptions,
 
     success_url: `${process.env.NEXT_PUBLIC_SITE_URL}/success`,
     cancel_url: `${process.env.NEXT_PUBLIC_SITE_URL}/cart?canceled=true`,
