@@ -100,7 +100,7 @@ export const products = [
     price: 79.99,
     thumbnail: "/products/spiral-jacket/spiral-jacket-front.jpg",
     description: "Premium jacket featuring the signature Yes Lord spiral graphic.",
-    sizes: ["S", "M", "L", "XL", "XXL"],
+    sizes: ["S", "M", "L", "XL", "XXL", "XXXL"],
     colors: [
       { name: "Black", swatch: ["#000000"], front: "/products/spiral-jacket/spiral-jacket-front.jpg", back: "/products/spiral-jacket/spiral-jacket-back.jpg" },
     ],
