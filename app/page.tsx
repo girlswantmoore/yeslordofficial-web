@@ -23,13 +23,13 @@ export default function Home() {
           <p className="mt-8 uppercase tracking-[0.45em] text-gray-300">
             Faith • Fashion • Purpose
           </p>
+<p className="mt-16 text-xs uppercase tracking-[0.5em] text-gray-400">
+  Scroll
+</p>
 
-          <a
-            href="#shop"
-            className="mt-12 border border-white px-10 py-4 uppercase tracking-[0.35em] transition hover:bg-white hover:text-black"
-          >
-            Shop Collection
-          </a>
+<div className="mt-2 animate-bounce text-2xl text-white/70">
+  ↓
+</div>
         </div>
       </section>
 
@@ -47,10 +47,7 @@ export default function Home() {
             <a
               key={product.slug}
               href={`/shop/${product.slug}`}
-              className={`group ${
-                index === products.length - 1 ? "lg:col-start-2" : ""
-              }`}
-            >
+className="group"            >
               <div className="aspect-[3/4] overflow-hidden rounded-xl bg-white shadow-lg">
                 <img
                   src={product.thumbnail}
