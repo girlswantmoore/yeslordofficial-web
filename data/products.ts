@@ -98,15 +98,15 @@ export const products = [
     category: "Hoodies",
     name: "Yes Lord Zip-Up Hoodie",
     price: 64.99,
-    thumbnail: "/products/zip-up/zipup-orange.jpg",
+    thumbnail: "/products/zip-up/zipup-orange-front.jpg",
     description: "Premium zip-up hoodie featuring the signature Yes Lord design.",
     sizes: ["S", "M", "L", "XL", "XXL"],
     colors: [
 {
   name: "Orange",
   swatch: ["#F97316"],
-  front: "/products/zip-up/zipup-orange.front.jpg",
-  back: "/products/zip-up/zipup-orange.back.jpg",
+  front: "/products/zip-up/zipup-orange-front.jpg",
+  back: "/products/zip-up/zipup-orange-back.jpg",
   soldOut: true,
 },
       { name: "Green", swatch: ["#808000"], front: "/products/zip-up/zipup-green.jpg" },
