@@ -7,25 +7,23 @@ export default function ShopPage() {
         <h1 className="mb-16 text-center text-5xl font-bold tracking-[0.35em]">
           SHOP
         </h1>
+
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
-          {products.map((product, index) => (
+          {products.map((product) => (
             <a
               key={product.slug}
               href={`/shop/${product.slug}`}
-              className="group"            
-              >
-              <div className="aspect-[3/4] overflow-hidden rounded-lg bg-white">                <img
+              className="group"
+            >
+              <div className="aspect-[3/4] overflow-hidden rounded-lg bg-white">
+                <img
                   src={product.thumbnail}
                   alt={product.name}
                   className="h-full w-full object-contain transition duration-500 group-hover:scale-105"
                 />
               </div>
 
-              <p className="mt-5 text-xs uppercase tracking-[0.25em] text-gray-500">
-                {product.category}
-              </p>
-
-              <h2 className="mt-2 text-xl font-semibold group-hover:text-gray-300">
+              <h2 className="mt-5 text-xl font-semibold group-hover:text-gray-300">
                 {product.name}
               </h2>
             </a>
