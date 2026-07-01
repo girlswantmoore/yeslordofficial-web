@@ -61,10 +61,10 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     setCart((currentCart) => currentCart.filter((_, i) => i !== index));
   }
 
-  function clearCart() {
-    setCart([]);
-  }
-
+function clearCart() {
+  setCart([]);
+  localStorage.removeItem("yeslord-cart");
+}
   return (
     <CartContext.Provider value={{ cart, cartCount, addToCart, removeFromCart, clearCart }}>
       {children}
