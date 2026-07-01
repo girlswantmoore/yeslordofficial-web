@@ -19,13 +19,13 @@ export default function Navbar() {
             ☰
           </button>
 
-          <a
-            href="/"
-            className="text-lg font-semibold uppercase tracking-[0.3em] md:text-xl md:tracking-[0.35em]"
-          >
-            YES LORD
-          </a>
-
+<a href="/">
+  <img
+    src="/logo.png"
+    alt="Yes Lord"
+    className="h-10 w-auto"
+  />
+</a>
           <div className="hidden gap-8 text-sm uppercase tracking-[0.2em] md:flex">
             <a href="/shop" className="hover:text-gray-300">
               Shop
