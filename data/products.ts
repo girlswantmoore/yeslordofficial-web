@@ -57,10 +57,11 @@ export const products = [
     category: "Hoodies",
     name: "Yes Lord Heavyweight Hoodie",
     price: 64.99,
-    thumbnail: "/products/heavyweight-hoodie/heavyweight-black-front.jpg",
+    thumbnail: "/products/heavyweight-hoodie/heavyweight-mint.jpg",
     description: "Premium heavyweight hoodie built for comfort, weight, and bold everyday wear.",
     sizes: ["S", "M", "L", "XL", "XXL"],
     colors: [
+      { name: "Mint", swatch: ["#98E0C0"], front: "/products/heavyweight-hoodie/heavyweight-mint.jpg" },
       { name: "Black", swatch: ["#000000"], front: "/products/heavyweight-hoodie/heavyweight-black-front.jpg", back: "/products/heavyweight-hoodie/heavyweight-black-back.jpg" },
       { name: "Blue", swatch: ["#2563EB"], front: "/products/heavyweight-hoodie/heavyweight-blue.jpg" },
       { name: "Brown", swatch: ["#92400E"], front: "/products/heavyweight-hoodie/heavyweight-brown.jpg" },
@@ -94,11 +95,11 @@ export const products = [
   },
 
   {
-    slug: "spiral-jacket",
+    slug: "workwear-jacket",
     category: "Jackets",
     name: "Yes Lord Workwear Jacket",
     price: 79.99,
-    thumbnail: "/products/spiral-jacket/spiral-jacket-front.jpg",
+    thumbnail: "/products/workwear-jacket/spiral-jacket-front.jpg",
     description: "Premium jacket featuring the signature Yes Lord spiral graphic.",
     sizes: ["S", "M", "L", "XL", "XXL", "XXXL"],
     colors: [
@@ -137,7 +138,7 @@ export const products = [
     category: "Accessories",
     name: "Yes Lord Trucker Hat",
     price: 29.99,
-    thumbnail: "/products/trucker-hat/trucker-black.jpg",
+    thumbnail: "/products/trucker-hat/trucker-green.jpg",
     description: "Classic mesh trucker hat featuring embroidered Yes Lord branding.",
     sizes: ["One Size"],
     colors: [
