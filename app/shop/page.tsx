@@ -12,10 +12,8 @@ export default function ShopPage() {
             <a
               key={product.slug}
               href={`/shop/${product.slug}`}
-              className={`group ${
-                index === products.length - 1 ? "lg:col-start-2" : ""
-              }`}
-            >
+              className="group"            
+              >
               <div className="aspect-[3/4] overflow-hidden rounded-lg bg-zinc-900">
                 <img
                   src={product.thumbnail}
