@@ -28,7 +28,7 @@ export const products = [
     description: "Premium cotton arch tee featuring the Yes Lord varsity logo.",
     sizes: ["S", "M", "L", "XL", "XXL"],
     colors: [
-      { name: "Black / Green", swatch: ["#000000", "#166534"], front: "/products/arch-tee/arch-tee-black-green.jpg" },
+      { name: "Black / Green", swatch: ["#000000", "#166534"], front: "/products/arch-tee/arch-tee-black-green1.jpg" },
       { name: "White / Yellow", swatch: ["#FFFFFF", "#FACC15"], front: "/products/arch-tee/arch-tee-white-yellow.jpg" },
       { name: "White / Green", swatch: ["#FFFFFF", "#166534"], front: "/products/arch-tee/arch-tee-white-green.jpg" },
       { name: "Red / Black", swatch: ["#DC2626", "#000000"], front: "/products/arch-tee/arch-tee-red-black.jpg" },
