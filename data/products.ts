@@ -41,7 +41,7 @@ export const products = [
     category: "Hoodies",
     name: "Yes Lord Classic Hoodie",
     price: 59.99,
-    thumbnail: "/products/classic-hoodie/classic-hoodie-black.jpg",
+    thumbnail: "/products/classic-hoodie/classic-hoodie-grey.jpg",
     description: "Classic Yes Lord hoodie.",
     sizes: ["S", "M", "L", "XL", "XXL"],
     colors: [
@@ -62,7 +62,7 @@ export const products = [
     sizes: ["S", "M", "L", "XL", "XXL"],
     colors: [
       { name: "Mint", swatch: ["#98E0C0"], front: "/products/heavyweight-hoodie/heavyweight-mint.jpg" },
-      { name: "Black", swatch: ["#000000"], front: "/products/heavyweight-hoodie/heavyweight-black-front.jpg", back: "/products/heavyweight-hoodie/heavyweight-black-back.jpg" },
+      { name: "Black", swatch: ["#000000"], front: "/products/heavyweight-hoodie/heavyweight-black.jpg"},
       { name: "Blue", swatch: ["#2563EB"], front: "/products/heavyweight-hoodie/heavyweight-blue.jpg" },
       { name: "Brown", swatch: ["#92400E"], front: "/products/heavyweight-hoodie/heavyweight-brown.jpg" },
       { name: "Cream / Brown", swatch: ["#FEF3C7", "#92400E"], front: "/products/heavyweight-hoodie/heavyweight-cream-brown.jpg" },
