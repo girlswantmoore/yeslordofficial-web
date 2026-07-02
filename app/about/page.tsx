@@ -19,8 +19,7 @@ export default function AboutPage() {
           className="mb-12 w-40 md:w-52"
         />
 
-        <div className="mx-auto max-w-4xl rounded-xl bg-black/30 p-8 text-center text-white backdrop-blur-sm md:p-12">
-
+<div className="mx-auto max-w-4xl p-8 text-center text-white md:p-12">
           <h1 className="mb-10 text-4xl font-bold md:text-5xl">
             About Yes Lord
           </h1>
