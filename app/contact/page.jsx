@@ -44,20 +44,6 @@ export default function ContactPage() {
                 @1yeslord
               </a>
             </div>
-
-            <div>
-              <p className="mb-2 uppercase tracking-[0.3em] text-gray-400">
-                Threads
-              </p>
-              <a
-                href="https://www.threads.com/@1yeslord?igshid=NTc4MTIwNjQ2YQ=="
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-2xl hover:opacity-70 transition"
-              >
-                @1yeslord
-              </a>
-            </div>
           </div>
 
           <p className="mt-16 uppercase tracking-[0.45em] text-gray-400">
