@@ -9,7 +9,7 @@ export default function Footer() {
     className="mx-auto w-64 max-w-full"
   />
 </a>
-        <p className="mt-4 uppercase tracking-[0.3em] text-gray-400">
+        <p className="mt-6 uppercase tracking-[0.3em] text-gray-400">
           Faith • Fashion • Purpose
         </p>
 
