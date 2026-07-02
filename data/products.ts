@@ -4,7 +4,8 @@ export const products = [
     name: "Yes Lord Classic Tee",
     price: 44.99,
     thumbnail: "/products/classic-tee/classic-tee-black-front.jpg",
-    description: "Premium cotton tee with front and back Yes Lord graphics.",
+    description:
+      "The perfect everyday essential. Made from durable cotton with a classic fit, this tee offers a soft feel while standing up to repeated wear and washing.",
     sizes: ["S", "M", "L", "XL", "XXL"],
     colors: [
       { name: "Black", swatch: ["#000000"], front: "/products/classic-tee/classic-tee-black-front.jpg", back: "/products/classic-tee/classic-tee-black-back.jpg" },
@@ -27,34 +28,11 @@ export const products = [
       "255–260 GSM. Stay true to size for an oversized boxy fit. Made with 100% USA cotton. Made in Honduras. Premium quality. Due to the garment dye process, each shirt may have slight shade variation.",
     sizes: ["S", "M", "L", "XL", "XXL"],
     colors: [
-      {
-        name: "Black / Green",
-        swatch: ["#000000", "#166534"],
-        front: "/products/arch-tee/arch-tee-black-green.jpg",
-        soldOutSizes: ["S"],
-      },
-      {
-        name: "White / Yellow",
-        swatch: ["#FFFFFF", "#FACC15"],
-        front: "/products/arch-tee/arch-tee-white-yellow.jpg",
-      },
-      {
-        name: "White / Green",
-        swatch: ["#FFFFFF", "#166534"],
-        front: "/products/arch-tee/arch-tee-white-green.jpg",
-      },
-      {
-        name: "Red / Green",
-        swatch: ["#DC2626", "#166534"],
-        front: "/products/arch-tee/arch-tee-red-green.jpg",
-        soldOut: true,
-      },
-      {
-        name: "Green / Yellow",
-        swatch: ["#166534", "#FACC15"],
-        front: "/products/arch-tee/arch-tee-green-yellow.jpg",
-        soldOutSizes: ["XXL"],
-      },
+      { name: "Black / Green", swatch: ["#000000", "#166534"], front: "/products/arch-tee/arch-tee-black-green.jpg", soldOutSizes: ["S"] },
+      { name: "White / Yellow", swatch: ["#FFFFFF", "#FACC15"], front: "/products/arch-tee/arch-tee-white-yellow.jpg" },
+      { name: "White / Green", swatch: ["#FFFFFF", "#166534"], front: "/products/arch-tee/arch-tee-white-green.jpg" },
+      { name: "Red / Green", swatch: ["#DC2626", "#166534"], front: "/products/arch-tee/arch-tee-red-green.jpg", soldOut: true },
+      { name: "Green / Yellow", swatch: ["#166534", "#FACC15"], front: "/products/arch-tee/arch-tee-green-yellow.jpg", soldOutSizes: ["XXL"] },
     ],
   },
 
@@ -63,7 +41,8 @@ export const products = [
     name: "Yes Lord Classic Hoodie",
     price: 59.99,
     thumbnail: "/products/classic-hoodie/classic-hoodie-grey.jpg",
-    description: "Classic Yes Lord hoodie.",
+    description:
+      "Designed with a soft cotton/polyester fleece blend, this hoodie features a brushed interior for exceptional warmth and comfort. The double-lined hood with matching drawstring, spacious kangaroo pocket, and ribbed cuffs and waistband provide a timeless look that’s perfect for everyday wear.",
     sizes: ["S", "M", "L", "XL", "XXL"],
     colors: [
       { name: "Black", swatch: ["#000000"], front: "/products/classic-hoodie/classic-hoodie-black.jpg" },
@@ -97,16 +76,11 @@ export const products = [
     name: "Yes Lord Zip-Up Hoodie",
     price: 64.99,
     thumbnail: "/products/zip-up/zipup-orange-front.jpg",
-    description: "Premium zip-up hoodie featuring the signature Yes Lord design.",
+    description:
+      "Sold individually. Slight distressing on the bottom hem and hood. Sun-dried wash. Made with 100% cotton, 400 GSM. Cropped and boxy fit with distressed fabric. Made in China. Premium quality.",
     sizes: ["S", "M", "L", "XL", "XXL"],
     colors: [
-      {
-        name: "Orange",
-        swatch: ["#F97316"],
-        front: "/products/zip-up/zipup-orange-front.jpg",
-        back: "/products/zip-up/zipup-orange-back.jpg",
-        soldOut: true,
-      },
+      { name: "Orange", swatch: ["#F97316"], front: "/products/zip-up/zipup-orange-front.jpg", back: "/products/zip-up/zipup-orange-back.jpg", soldOut: true },
       { name: "Green", swatch: ["#808000"], front: "/products/zip-up/zipup-green.jpg" },
       { name: "Beige", swatch: ["#D6C7B8"], front: "/products/zip-up/zipup-beige.jpg" },
       { name: "Blue", swatch: ["#67E8F9"], front: "/products/zip-up/zipup-blue.jpg" },
@@ -123,18 +97,8 @@ export const products = [
       "Premium workwear jacket featuring front pockets and the spiral “Take It Up With God” graphic on the back. Made with 65% polyester and 35% cotton. Made in China. Premium quality.",
     sizes: ["S", "M", "L", "XL", "XXL", "XXXL"],
     colors: [
-      {
-        name: "Black",
-        swatch: ["#000000"],
-        front: "/products/workwear-jacket/workwear-black-front.jpg",
-        back: "/products/workwear-jacket/workwear-black-back.jpg",
-      },
-      {
-        name: "Navy",
-        swatch: ["#000080"],
-        front: "/products/workwear-jacket/workwear-navy-front.jpg",
-        back: "/products/workwear-jacket/workwear-navy-back.jpg",
-      },
+      { name: "Black", swatch: ["#000000"], front: "/products/workwear-jacket/workwear-black-front.jpg", back: "/products/workwear-jacket/workwear-black-back.jpg" },
+      { name: "Navy", swatch: ["#000080"], front: "/products/workwear-jacket/workwear-navy-front.jpg", back: "/products/workwear-jacket/workwear-navy-back.jpg" },
     ],
   },
 
@@ -147,24 +111,9 @@ export const products = [
       "Sold individually. One size fits most. Made with 100% cotton. Price point quality.",
     sizes: ["One Size"],
     colors: [
-      {
-        name: "Denim",
-        front: "/products/bucket-hat/bucket-denim-front.jpg",
-        back: "/products/bucket-hat/bucket-denim-back.jpg",
-        swatch: ["#3f5f7f", "#d6d6d6"],
-        soldOut: true,
-      },
-      {
-        name: "Mint",
-        front: "/products/bucket-hat/bucket-mint.jpg",
-        swatch: ["#98E0C0"],
-      },
-      {
-        name: "Camo",
-        front: "/products/bucket-hat/bucket-camo.jpg",
-        swatch: ["#3f4a2f", "#7a6a3a", "#1f2418"],
-        soldOut: true,
-      },
+      { name: "Denim", front: "/products/bucket-hat/bucket-denim-front.jpg", back: "/products/bucket-hat/bucket-denim-back.jpg", swatch: ["#3f5f7f", "#d6d6d6"], soldOut: true },
+      { name: "Mint", front: "/products/bucket-hat/bucket-mint.jpg", swatch: ["#98E0C0"] },
+      { name: "Camo", front: "/products/bucket-hat/bucket-camo.jpg", swatch: ["#3f4a2f", "#7a6a3a", "#1f2418"], soldOut: true },
     ],
   },
 
