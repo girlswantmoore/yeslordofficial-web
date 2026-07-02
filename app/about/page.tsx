@@ -13,84 +13,132 @@ export default function AboutPage() {
       style={{ backgroundImage: "url('/about.jpg')" }}
     >
       <div className="min-h-screen bg-black/60 flex flex-col items-center px-6 pt-36 pb-10">
-
         <img
           src="/logo.png"
           alt="Yes Lord"
-          className="w-40 md:w-52 mb-12"
+          className="mb-12 w-40 md:w-52"
         />
 
-        <div className="max-w-4xl text-center text-white space-y-6 text-base md:text-lg leading-9">
+        <div className="mx-auto max-w-4xl rounded-xl bg-black/30 p-8 text-center text-white backdrop-blur-sm md:p-12">
 
-          <p>
-            <strong>About the brand...</strong>
-          </p>
+          <h1 className="mb-10 text-4xl font-bold md:text-5xl">
+            About Yes Lord
+          </h1>
 
-          <p>
-            Yes Lord wasn’t created because everything in life is perfect.
+          <div className="space-y-8 text-base leading-9 md:text-lg">
+
+            <p className="text-2xl font-semibold">
+              Every life reaches a moment when certainty ends.
             </p>
+
             <p>
-            It was born from the moments that test us the most.
-          </p>
+              A moment when the plan changes.
+              <br />
+              When the answers don’t come.
+              <br />
+              When what lies ahead cannot be controlled.
+            </p>
 
-          <p>
-            Like everyone, we've all faced trials, setbacks, uncertainty, and seasons
-            where it would’ve been easy to lose hope. Through every high and
-            every low, one truth has remained constant:
-            <strong> God is always present.</strong> Even when we can’t
-            see the path ahead, He is walking it with us.
-          </p>
+            <p className="text-2xl font-semibold">
+              In those moments, two words have the power to change everything:
+            </p>
 
-          <p>
-            This brand is more than clothing...it’s a reminder.
-          </p>
+            <p className="text-5xl font-bold tracking-[0.35em]">
+              YES LORD
+            </p>
 
-          <p>
-            A reminder to slow down in a world that constantly tells us to move
-            faster.
-          </p>
+            <p>
+              Not because life is easy.
+              <br />
+              Not because faith removes every obstacle.
+              <br />
+              But because God remains faithful through every season.
+            </p>
 
-          <p>
-            A reminder that we don’t have to carry every burden alone.
-          </p>
+            <p>
+              We believe surrender is not weakness—it is strength placed in the
+              right hands.
+            </p>
 
-          <p>
-            A reminder to trust God even when life doesn’t make sense.
-          </p>
+            <p>
+              We believe peace isn’t found in having every answer, but in
+              trusting the One who does.
+            </p>
 
-          <p>
-            Every design represents a simple but powerful declaration:
-            <strong> “Yes Lord.”</strong> A willingness to trust His plan over
-            our own, to surrender control, and to believe that His purpose is
-            greater than our circumstances.
-          </p>
+            <p>
+              We believe our circumstances may change, but God’s character never
+              does.
+            </p>
 
-          <p>
-            Whether you’re celebrating victories or fighting battles no one else
-            can see, I hope every piece reminds you that God hasn’t forgotten
-            you. His presence doesn’t depend on your situation. He is with you
-            in your joy, your pain, your waiting, and your breakthrough.
-          </p>
+            <p>
+              These convictions are woven into everything we create.
+            </p>
 
-          <p>
-            Thank you for being part of this journey. Our goal is that every
-            time you wear <strong>Yes Lord</strong>, you’re reminded to lean on
-            Him, trust Him, and walk boldly in faith.
-          </p>
+            <p>
+              Not to make a statement about fashion, but to make a quiet
+              declaration of faith.
+            </p>
 
-          <div className="pt-8">
-            <p className="text-xl md:text-2xl italic">
-              Because no matter where you are…there you are. Make the best of it.
+            <p>
+              Every piece is designed with purpose, crafted with excellence, and
+              made to outlast trends because the truths that inspire them never
+              go out of style.
+            </p>
+
+            <p>
+              Whether you’re celebrating a victory, carrying a burden, waiting
+              on an answer, or beginning again, may what you wear remind you of
+              what remains true:
+            </p>
+
+            <div className="space-y-2 py-4 text-2xl font-semibold">
+              <p>God is present.</p>
+              <p>God is faithful.</p>
+              <p>God is worthy of your trust.</p>
+            </div>
+
+            <p>
+              This is more than a brand—it’s a daily posture.
+            </p>
+
+            <p>
+              A quiet confidence.
+            </p>
+
+            <p>
+              A willingness to surrender what you cannot control and faithfully
+              steward what you can.
+            </p>
+
+            <p>
+              Because every day presents the same invitation.
+            </p>
+
+            <div className="space-y-2 py-4 text-xl font-medium">
+              <p>Faith over fear.</p>
+              <p>Trust over certainty.</p>
+              <p>Surrender over control.</p>
+            </div>
+
+            <p>
+              And when that becomes your posture, two simple words become more
+              than a name.
+            </p>
+
+            <p className="text-3xl font-semibold">
+              They become a way of living.
+            </p>
+
+            <p className="pt-6 text-5xl font-bold tracking-[0.35em] md:text-6xl">
+              YES LORD.
             </p>
 
           </div>
-
         </div>
 
-        <h3 className="text-2xl md:text-3xl font-semibold tracking-[0.3em] text-white text-center mt-20 mb-6">
+        <h3 className="mt-20 mb-6 text-center text-2xl font-semibold tracking-[0.3em] text-white md:text-3xl">
           Faith. Fashion. Purpose.
         </h3>
-
       </div>
     </main>
   );
