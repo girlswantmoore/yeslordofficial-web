@@ -20,8 +20,7 @@ export default function AboutPage() {
           className="w-40 md:w-52 mb-12"
         />
 
-        <div className="max-w-4xl text-center text-white space-y-6 text-base md:text-lg leading-9">
-
+<div className="mx-auto max-w-4xl rounded-xl bg-black/30 p-8 backdrop-blur-sm">
           <p>
             <strong>About the brand...</strong>
           </p>
