@@ -5,12 +5,11 @@ export default function Home() {
     <main className="bg-black text-white">
       {/* Hero */}
       <section className="relative h-screen overflow-hidden">
-        <img
-          src="/mainpage.jpeg"
-          alt="Yes Lord hero"
-          className="absolute inset-0 h-full w-full object-cover"
-        />
-
+<img
+  src="/mainpage.jpeg"
+  alt="Yes Lord hero"
+  className="absolute inset-0 h-full w-full object-cover object-[60%_center] md:object-center"
+/>
         <div className="absolute inset-0 bg-black/60" />
 
         <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center">
