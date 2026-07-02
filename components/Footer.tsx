@@ -37,8 +37,12 @@ export default function Footer() {
             Privacy Policy
           </a>
 
-          <a href="/return-policy" className="hover:text-white">
-            Return Policy
+<a href="/shipping" className="hover:text-white">
+  Shipping Policy
+</a>
+
+          <a href="/return-refund-policy" className="hover:text-white">
+            Return & Refund Policy
           </a>
         </div>
 
