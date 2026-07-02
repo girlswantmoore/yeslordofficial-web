@@ -18,44 +18,46 @@ export const products = [
     ],
   },
 
-{
-  slug: "arch-tee",
-  name: "Yes Lord Arch Tee",
-  price: 54.99,
-  thumbnail: "/products/arch-tee/arch-tee-white-yellow.jpg",
-  description: "Premium cotton arch tee featuring the Yes Lord varsity logo.",
-  sizes: ["S", "M", "L", "XL", "XXL"],
-  colors: [
-    {
-      name: "Black / Green",
-      swatch: ["#000000", "#166534"],
-      front: "/products/arch-tee/arch-tee-black-green.jpg",
-      soldOutSizes: ["S"],
-    },
-    {
-      name: "White / Yellow",
-      swatch: ["#FFFFFF", "#FACC15"],
-      front: "/products/arch-tee/arch-tee-white-yellow.jpg",
-    },
-    {
-      name: "White / Green",
-      swatch: ["#FFFFFF", "#166534"],
-      front: "/products/arch-tee/arch-tee-white-green.jpg",
-    },
-    {
-      name: "Red / Green",
-      swatch: ["#DC2626", "#166534"],
-      front: "/products/arch-tee/arch-tee-red-green.jpg",
-      soldOut: true,
-    },
-    {
-      name: "Green / Yellow",
-      swatch: ["#166534", "#FACC15"],
-      front: "/products/arch-tee/arch-tee-green-yellow.jpg",
-      soldOutSizes: ["XXL"],
-    },
-  ],
-},
+  {
+    slug: "arch-tee",
+    name: "Yes Lord Arch Tee",
+    price: 54.99,
+    thumbnail: "/products/arch-tee/arch-tee-white-yellow.jpg",
+    description:
+      "255–260 GSM. Stay true to size for an oversized boxy fit. Made with 100% USA cotton. Made in Honduras. Premium quality. Due to the garment dye process, each shirt may have slight shade variation.",
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    colors: [
+      {
+        name: "Black / Green",
+        swatch: ["#000000", "#166534"],
+        front: "/products/arch-tee/arch-tee-black-green.jpg",
+        soldOutSizes: ["S"],
+      },
+      {
+        name: "White / Yellow",
+        swatch: ["#FFFFFF", "#FACC15"],
+        front: "/products/arch-tee/arch-tee-white-yellow.jpg",
+      },
+      {
+        name: "White / Green",
+        swatch: ["#FFFFFF", "#166534"],
+        front: "/products/arch-tee/arch-tee-white-green.jpg",
+      },
+      {
+        name: "Red / Green",
+        swatch: ["#DC2626", "#166534"],
+        front: "/products/arch-tee/arch-tee-red-green.jpg",
+        soldOut: true,
+      },
+      {
+        name: "Green / Yellow",
+        swatch: ["#166534", "#FACC15"],
+        front: "/products/arch-tee/arch-tee-green-yellow.jpg",
+        soldOutSizes: ["XXL"],
+      },
+    ],
+  },
+
   {
     slug: "classic-hoodie",
     name: "Yes Lord Classic Hoodie",
@@ -76,11 +78,12 @@ export const products = [
     name: "Yes Lord Heavyweight Hoodie",
     price: 64.99,
     thumbnail: "/products/heavyweight-hoodie/heavyweight-mint.jpg",
-    description: "Premium heavyweight hoodie built for comfort, weight, and bold everyday wear.",
+    description:
+      "Standard fit for a relaxed, easy feel. Made with 80% cotton and 20% polyester. 400 GSM unisex fit. Made in China. Premium quality.",
     sizes: ["S", "M", "L", "XL", "XXL"],
     colors: [
       { name: "Mint", swatch: ["#98E0C0"], front: "/products/heavyweight-hoodie/heavyweight-mint.jpg" },
-      { name: "Black", swatch: ["#000000"], front: "/products/heavyweight-hoodie/heavyweight-black.jpg"},
+      { name: "Black", swatch: ["#000000"], front: "/products/heavyweight-hoodie/heavyweight-black.jpg" },
       { name: "Blue", swatch: ["#2563EB"], front: "/products/heavyweight-hoodie/heavyweight-blue.jpg" },
       { name: "Brown", swatch: ["#92400E"], front: "/products/heavyweight-hoodie/heavyweight-brown.jpg" },
       { name: "Cream / Brown", swatch: ["#FEF3C7", "#92400E"], front: "/products/heavyweight-hoodie/heavyweight-cream-brown.jpg" },
@@ -97,13 +100,13 @@ export const products = [
     description: "Premium zip-up hoodie featuring the signature Yes Lord design.",
     sizes: ["S", "M", "L", "XL", "XXL"],
     colors: [
-{
-  name: "Orange",
-  swatch: ["#F97316"],
-  front: "/products/zip-up/zipup-orange-front.jpg",
-  back: "/products/zip-up/zipup-orange-back.jpg",
-  soldOut: true,
-},
+      {
+        name: "Orange",
+        swatch: ["#F97316"],
+        front: "/products/zip-up/zipup-orange-front.jpg",
+        back: "/products/zip-up/zipup-orange-back.jpg",
+        soldOut: true,
+      },
       { name: "Green", swatch: ["#808000"], front: "/products/zip-up/zipup-green.jpg" },
       { name: "Beige", swatch: ["#D6C7B8"], front: "/products/zip-up/zipup-beige.jpg" },
       { name: "Blue", swatch: ["#67E8F9"], front: "/products/zip-up/zipup-blue.jpg" },
@@ -116,53 +119,62 @@ export const products = [
     name: "Yes Lord Workwear Jacket",
     price: 79.99,
     thumbnail: "/products/workwear-jacket/workwear-navy-front.jpg",
-    description: "Premium jacket featuring the signature Yes Lord spiral graphic.",
+    description:
+      "Premium workwear jacket featuring front pockets and the spiral “Take It Up With God” graphic on the back. Made with 65% polyester and 35% cotton. Made in China. Premium quality.",
     sizes: ["S", "M", "L", "XL", "XXL", "XXXL"],
     colors: [
-      {  name: "Black", swatch: ["#000000"], front: "/products/workwear-jacket/workwear-black-front.jpg",
-        back: "/products/workwear-jacket/workwear-black-back.jpg" },
-      {  name: "Navy", swatch: ["#000080"], front: "/products/workwear-jacket/workwear-navy-front.jpg",
-        back: "/products/workwear-jacket/workwear-navy-back.jpg" },
-
+      {
+        name: "Black",
+        swatch: ["#000000"],
+        front: "/products/workwear-jacket/workwear-black-front.jpg",
+        back: "/products/workwear-jacket/workwear-black-back.jpg",
+      },
+      {
+        name: "Navy",
+        swatch: ["#000080"],
+        front: "/products/workwear-jacket/workwear-navy-front.jpg",
+        back: "/products/workwear-jacket/workwear-navy-back.jpg",
+      },
     ],
   },
 
-{
-  slug: "bucket-hat",
-  name: "Yes Lord Bucket Hat",
-  price: 34.99,
-  thumbnail: "/products/bucket-hat/bucket-denim-front.jpg",
-  description:
-    "Classic Yes Lord bucket hat with premium embroidery. Available in multiple styles.",
-  sizes: ["One Size"],
-  colors: [
-    {
-      name: "Denim",
-      front: "/products/bucket-hat/bucket-denim-front.jpg",
-      back: "/products/bucket-hat/bucket-denim-back.jpg",
-      swatch: ["#3f5f7f", "#d6d6d6"],
-      soldOut: true,
-    },
-       {
-      name: "Mint",
-      front: "/products/bucket-hat/bucket-mint.jpg",
-      swatch: ["#98E0C0"],
-    },
-    {
-      name: "Camo",
-      front: "/products/bucket-hat/bucket-camo.jpg",
-      swatch: ["#3f4a2f", "#7a6a3a", "#1f2418"],
-      soldOut: true,
-    },
-  ],
-},
+  {
+    slug: "bucket-hat",
+    name: "Yes Lord Bucket Hat",
+    price: 34.99,
+    thumbnail: "/products/bucket-hat/bucket-denim-front.jpg",
+    description:
+      "Sold individually. One size fits most. Made with 100% cotton. Price point quality.",
+    sizes: ["One Size"],
+    colors: [
+      {
+        name: "Denim",
+        front: "/products/bucket-hat/bucket-denim-front.jpg",
+        back: "/products/bucket-hat/bucket-denim-back.jpg",
+        swatch: ["#3f5f7f", "#d6d6d6"],
+        soldOut: true,
+      },
+      {
+        name: "Mint",
+        front: "/products/bucket-hat/bucket-mint.jpg",
+        swatch: ["#98E0C0"],
+      },
+      {
+        name: "Camo",
+        front: "/products/bucket-hat/bucket-camo.jpg",
+        swatch: ["#3f4a2f", "#7a6a3a", "#1f2418"],
+        soldOut: true,
+      },
+    ],
+  },
 
-{
+  {
     slug: "trucker-hat",
     name: "Yes Lord Trucker Hat",
     price: 29.99,
     thumbnail: "/products/trucker-hat/trucker-green.jpg",
-    description: "Classic mesh trucker hat featuring embroidered Yes Lord branding.",
+    description:
+      "Classic 5-panel trucker cap made with 65% polyester and 35% cotton. Features a seamless front panel with full buckram, matching color sweatband, plastic adjustable snap, and “Yes Lord” embroidery on the front.",
     sizes: ["One Size"],
     colors: [
       { name: "Black", swatch: ["#000000"], front: "/products/trucker-hat/trucker-black.jpg" },
