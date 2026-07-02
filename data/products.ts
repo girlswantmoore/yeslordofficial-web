@@ -177,7 +177,7 @@ export const products = [
     name: "Yes Lord Socks",
     price: 14.99,
     thumbnail: "/products/socks/socks-white.jpg",
-    description: "Premium Yes Lord crew socks designed for everyday comfort.",
+    description: "Premium Yes Lord crew socks designed for everyday comfort. Final Sale.",
     sizes: ["One Size"],
     colors: [
       { name: "White", swatch: ["#FFFFFF"], front: "/products/socks/socks-white.jpg" },

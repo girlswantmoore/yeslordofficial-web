@@ -62,6 +62,36 @@ className="group"            >
           ))}
         </div>
       </section>
+      <section className="border-t border-zinc-800 px-8 py-24 text-center">
+  <div className="mx-auto max-w-2xl">
+    <p className="mb-4 text-sm uppercase tracking-[0.35em] text-gray-500">
+      Stay Updated
+    </p>
+
+    <h2 className="mb-6 text-4xl font-bold">
+      Join the Email List
+    </h2>
+
+    <p className="mb-10 leading-8 text-gray-400">
+      Be the first to know about restocks, new drops, and exclusive updates.
+    </p>
+
+    <form className="mx-auto flex max-w-xl flex-col gap-4 sm:flex-row">
+      <input
+        type="email"
+        placeholder="Enter your email"
+        className="flex-1 border border-zinc-700 bg-black px-5 py-4 text-white outline-none placeholder:text-gray-600 focus:border-white"
+      />
+
+      <button
+        type="submit"
+        className="bg-white px-8 py-4 text-sm font-semibold uppercase tracking-[0.25em] text-black transition hover:bg-gray-200"
+      >
+        Join
+      </button>
+    </form>
+  </div>
+</section>
     </main>
   );
 }
