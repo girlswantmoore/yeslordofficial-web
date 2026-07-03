@@ -17,6 +17,16 @@ type Order = {
   }[];
 };
 
+function formatOrderDate(timestamp: number) {
+  return new Date(timestamp * 1000).toLocaleString("en-US", {
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+    hour: "numeric",
+    minute: "2-digit",
+  });
+}
+
 export default function AdminPage() {
   const [password, setPassword] = useState("");
   const [orders, setOrders] = useState<Order[]>([]);
@@ -85,6 +95,9 @@ export default function AdminPage() {
                     Order
                   </p>
                   <p className="mt-1 text-lg">{order.id}</p>
+                  <p className="mt-2 text-sm text-gray-400">
+                    {formatOrderDate(order.created)}
+                  </p>
                 </div>
 
                 <div className="text-left md:text-right">
