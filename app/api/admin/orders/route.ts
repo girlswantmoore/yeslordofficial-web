@@ -15,9 +15,15 @@ export async function POST(request: NextRequest) {
     expand: ["data.customer_details", "data.shipping_cost"],
   });
 
-  const orders = await Promise.all(
-    sessions.data.map(async (session) => {
-      const lineItems = await stripe.checkout.sessions.listLineItems(
+const excludedOrders = [
+  "cs_live_a12IqJ1BmCRhGMhd3BnMVYe47jyyaV5WdT6XF59vIbAWvdJnVSSyjuTqDc",
+  "cs_live_b1bsOCyCPTy5CN3BZLsygzw2FzaaxmizLNox7wVdzRITGE2YZm2PfBZEem",
+];
+
+const orders = await Promise.all(
+  sessions.data
+    .filter((session) => !excludedOrders.includes(session.id))
+    .map(async (session) => {      const lineItems = await stripe.checkout.sessions.listLineItems(
         session.id,
         { limit: 100 }
       );
