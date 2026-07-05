@@ -115,21 +115,30 @@ export default function OrderCard({
       <div className="grid gap-8 md:grid-cols-3">
         <div>
           <h2 className="mb-3 font-semibold">Customer</h2>
-          <p>{order.customer?.name}</p>
-          <p className="text-gray-400">{order.customer?.email}</p>
-          <p className="text-gray-400">{order.customer?.phone}</p>
-        </div>
+<p>{order.customer?.name || order.shipping?.name || "No name"}</p>
+<p className="text-gray-400">{order.customer?.email || "No email"}</p>
+<p className="text-gray-400">{order.customer?.phone || "No phone"}</p>        </div>
 
         <div>
           <h2 className="mb-3 font-semibold">Shipping Address</h2>
-          <p>{order.customer?.address?.line1}</p>
-          <p>{order.customer?.address?.line2}</p>
-          <p>
-            {order.customer?.address?.city}, {order.customer?.address?.state}{" "}
-            {order.customer?.address?.postal_code}
-          </p>
-          <p>{order.customer?.address?.country}</p>
-        </div>
+{(() => {
+  const address = order.shipping?.address || order.customer?.address;
+
+  if (!address) {
+    return <p className="text-gray-500">No address found</p>;
+  }
+
+  return (
+    <>
+      <p>{address.line1}</p>
+      {address.line2 && <p>{address.line2}</p>}
+      <p>
+        {address.city}, {address.state} {address.postal_code}
+      </p>
+      <p>{address.country}</p>
+    </>
+  );
+})()}        </div>
 
         <div>
           <h2 className="mb-3 font-semibold">Items</h2>

@@ -28,20 +28,21 @@ const orders = await Promise.all(
         { limit: 100 }
       );
 
-      return {
-        id: session.id,
-        created: session.created,
-        amountTotal: session.amount_total,
-        currency: session.currency,
-        paymentStatus: session.payment_status,
-        customer: session.customer_details,
-        shippingCost: session.shipping_cost,
-        items: lineItems.data.map((item) => ({
-          name: item.description,
-          quantity: item.quantity,
-          amount: item.amount_total,
-        })),
-      };
+return {
+  id: session.id,
+  created: session.created,
+  amountTotal: session.amount_total,
+  currency: session.currency,
+  paymentStatus: session.payment_status,
+  customer: session.customer_details,
+shipping: (session as any).shipping_details,
+  shippingCost: session.shipping_cost,
+  items: lineItems.data.map((item) => ({
+    name: item.description,
+    quantity: item.quantity,
+    amount: item.amount_total,
+  })),
+};
     })
   );
 

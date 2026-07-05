@@ -14,6 +14,7 @@ export type Order = {
   currency: string;
   paymentStatus: string;
   customer: any;
+  shipping: any;
   shippingCost: any;
   items: {
     name: string;
