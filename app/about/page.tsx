@@ -8,21 +8,19 @@ export default function AboutPage() {
   }, []);
 
   return (
-<main
-  className="relative min-h-screen bg-cover bg-center bg-no-repeat bg-fixed"
-  style={{ backgroundImage: "url('/about.jpg')" }}
->
-  <div className="absolute inset-0 bg-black/55 backdrop-blur-[1px]" />
-<div className="relative z-10 min-h-screen px-6 pt-44 pb-24 md:pt-56">
-<div className="mx-auto max-w-4xl rounded-3xl border border-white/10 bg-black/35 px-8 py-12 text-center text-white backdrop-blur-md md:px-16 md:py-20">       
-   <h1 className="mb-10 text-4xl font-bold md:text-6xl md:text-8xl font-extrabold tracking-[0.45em]">
-            About Yes Lord
-          </h1>
+    <main
+      className="min-h-screen bg-cover bg-center bg-no-repeat bg-fixed"
+      style={{ backgroundImage: "url('/about.jpg')" }}
+    >
+      <div className="min-h-screen px-6 pt-44 pb-24 md:pt-56">
+        <div className="mx-auto max-w-4xl text-center text-white">
+          <p className="mb-12 text-2xl font-semibold italic text-stone-200 md:text-3xl">
+            About the brand...
+          </p>
 
-          <div className="space-y-8 text-lg leading-10 font-light text-white/90 md:text-lg">
-
-<p className="text-3xl font-light tracking-wide">
-                Every life reaches a moment when certainty ends.
+          <div className="space-y-10 text-base leading-9 text-stone-100 drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)] md:text-lg">
+            <p className="text-2xl font-semibold md:text-3xl">
+              Every life reaches a moment when certainty ends.
             </p>
 
             <p>
@@ -37,7 +35,7 @@ export default function AboutPage() {
               In those moments, two words have the power to change everything:
             </p>
 
-            <p className="text-5xl font-bold tracking-[0.35em]">
+            <p className="text-5xl font-bold tracking-[0.35em] md:text-6xl">
               YES LORD
             </p>
 
@@ -64,9 +62,7 @@ export default function AboutPage() {
               does.
             </p>
 
-            <p>
-              These convictions are woven into everything we create.
-            </p>
+            <p>These convictions are woven into everything we create.</p>
 
             <p>
               Not to make a statement about fashion, but to make a quiet
@@ -91,22 +87,16 @@ export default function AboutPage() {
               <p>God is worthy of your trust.</p>
             </div>
 
-            <p>
-              This is more than a brand—it’s a daily posture.
-            </p>
+            <p>This is more than a brand—it’s a daily posture.</p>
 
-            <p>
-              A quiet confidence.
-            </p>
+            <p>A quiet confidence.</p>
 
             <p>
               A willingness to surrender what you cannot control and faithfully
               steward what you can.
             </p>
 
-            <p>
-              Because every day presents the same invitation.
-            </p>
+            <p>Because every day presents the same invitation.</p>
 
             <div className="space-y-2 py-4 text-xl font-medium">
               <p>Faith over fear.</p>
@@ -122,15 +112,10 @@ export default function AboutPage() {
             <p className="text-3xl font-semibold">
               They become a way of living.
             </p>
-
-            <p className="pt-6 text-5xl font-bold tracking-[0.35em] md:text-6xl">
-              YES LORD.
-            </p>
-
           </div>
         </div>
 
-        <h3 className="mt-24 text-center text-2xl font-semibold tracking-[0.3em] text-white md:text-3xl">
+        <h3 className="mt-24 text-center text-2xl font-semibold tracking-[0.3em] text-stone-100 drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)] md:text-3xl">
           Faith. Fashion. Purpose.
         </h3>
       </div>
