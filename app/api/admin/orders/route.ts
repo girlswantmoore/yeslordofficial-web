@@ -22,11 +22,16 @@ const excludedOrders = [
 
 const orders = await Promise.all(
   sessions.data
-    .filter((session) => !excludedOrders.includes(session.id))
-    .map(async (session) => {      const lineItems = await stripe.checkout.sessions.listLineItems(
+.filter(
+  (session) =>
+    !excludedOrders.includes(session.id) &&
+    session.payment_status === "paid"
+)    .map(async (session) => {      const lineItems = await stripe.checkout.sessions.listLineItems(
         session.id,
         { limit: 100 }
       );
+
+console.log(JSON.stringify(session, null, 2));
 
 return {
   id: session.id,
