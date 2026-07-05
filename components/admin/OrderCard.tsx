@@ -13,12 +13,26 @@ function formatOrderDate(timestamp: number) {
   });
 }
 
-export default function OrderCard({ order }: { order: Order }) {
+export default function OrderCard({
+  order,
+  password,
+}: {
+  order: Order;
+  password: string;
+}) {
   const [status, setStatus] = useState("ordered");
+  const [buyingLabel, setBuyingLabel] = useState(false);
+  const [labelUrl, setLabelUrl] = useState("");
+  const [trackingNumber, setTrackingNumber] = useState("");
 
   useEffect(() => {
     const savedStatus = localStorage.getItem(`order-status-${order.id}`);
+    const savedLabelUrl = localStorage.getItem(`order-label-${order.id}`);
+    const savedTracking = localStorage.getItem(`order-tracking-${order.id}`);
+
     if (savedStatus) setStatus(savedStatus);
+    if (savedLabelUrl) setLabelUrl(savedLabelUrl);
+    if (savedTracking) setTrackingNumber(savedTracking);
   }, [order.id]);
 
   function updateStatus(value: string) {
@@ -26,61 +40,36 @@ export default function OrderCard({ order }: { order: Order }) {
     localStorage.setItem(`order-status-${order.id}`, value);
   }
 
-  function printLabel() {
-    const address = order.customer?.address;
+  async function buyShippingLabel() {
+    setBuyingLabel(true);
 
-    const labelText = `
-YES LORD ORDER LABEL
+    const response = await fetch("/api/admin/buy-label", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ password, order }),
+    });
 
-Customer:
-${order.customer?.name || ""}
-${order.customer?.email || ""}
-${order.customer?.phone || ""}
+    const data = await response.json();
 
-Ship To:
-${order.customer?.name || ""}
-${address?.line1 || ""}
-${address?.line2 || ""}
-${address?.city || ""}, ${address?.state || ""} ${address?.postal_code || ""}
-${address?.country || ""}
+    if (!response.ok) {
+      alert(data.error || "Could not buy shipping label.");
+      setBuyingLabel(false);
+      return;
+    }
 
-Items:
-${order.items.map((item) => `${item.quantity}x ${item.name}`).join("\n")}
+    setLabelUrl(data.labelUrl);
+    setTrackingNumber(data.trackingNumber);
 
-Order:
-${order.id}
-${formatOrderDate(order.created)}
-    `;
+    localStorage.setItem(`order-label-${order.id}`, data.labelUrl);
+    localStorage.setItem(`order-tracking-${order.id}`, data.trackingNumber);
 
-    const printWindow = window.open("", "_blank");
+    updateStatus("shipped");
 
-    if (!printWindow) return;
+    window.open(data.labelUrl, "_blank");
 
-    printWindow.document.write(`
-      <html>
-        <head>
-          <title>Order Label</title>
-          <style>
-            body {
-              font-family: Arial, sans-serif;
-              padding: 32px;
-              color: #000;
-            }
-            pre {
-              white-space: pre-wrap;
-              font-size: 16px;
-              line-height: 1.5;
-            }
-          </style>
-        </head>
-        <body>
-          <pre>${labelText}</pre>
-        </body>
-      </html>
-    `);
-
-    printWindow.document.close();
-    printWindow.print();
+    setBuyingLabel(false);
   }
 
   const threeDays = 3 * 24 * 60 * 60 * 1000;
@@ -152,6 +141,15 @@ ${formatOrderDate(order.created)}
         </div>
       </div>
 
+      {trackingNumber && (
+        <div className="mt-6 rounded-lg border border-zinc-800 bg-black p-4">
+          <p className="text-sm uppercase tracking-[0.2em] text-gray-500">
+            Tracking Number
+          </p>
+          <p className="mt-2 text-[#9FD6CC]">{trackingNumber}</p>
+        </div>
+      )}
+
       <div className="mt-8 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
         <div>
           <p className="mb-2 text-sm uppercase tracking-[0.2em] text-gray-500">
@@ -170,12 +168,33 @@ ${formatOrderDate(order.created)}
           </select>
         </div>
 
-        <button
-          onClick={printLabel}
-          className="border border-white px-5 py-3 text-sm uppercase tracking-[0.2em] transition hover:bg-white hover:text-black"
-        >
-          Print Label
-        </button>
+        <div className="flex flex-col gap-3 md:flex-row">
+          {labelUrl && (
+            <a
+              href={labelUrl}
+              target="_blank"
+              className="border border-white px-5 py-3 text-center text-sm uppercase tracking-[0.2em] transition hover:bg-white hover:text-black"
+            >
+              Print Label
+            </a>
+          )}
+
+          <button
+            onClick={buyShippingLabel}
+            disabled={buyingLabel || !!labelUrl}
+            className={`border px-5 py-3 text-sm uppercase tracking-[0.2em] transition ${
+              buyingLabel || labelUrl
+                ? "cursor-not-allowed border-zinc-700 text-zinc-600"
+                : "border-[#9FD6CC] text-[#9FD6CC] hover:bg-[#9FD6CC] hover:text-black"
+            }`}
+          >
+            {labelUrl
+              ? "Label Purchased"
+              : buyingLabel
+              ? "Buying Label..."
+              : "Buy Shipping Label"}
+          </button>
+        </div>
       </div>
 
       <p className="mt-6 text-sm uppercase tracking-[0.2em] text-gray-500">

@@ -12,9 +12,8 @@ export default function AboutPage() {
       className="min-h-screen bg-cover bg-center bg-no-repeat bg-fixed"
       style={{ backgroundImage: "url('/about.jpg')" }}
     >
-
-
-<div className="mx-auto max-w-4xl p-8 text-center text-white md:p-12">
+      <div className="min-h-screen px-6 pt-40 pb-20 md:pt-52">
+        <div className="mx-auto max-w-4xl text-center text-white">
           <h1 className="mb-10 text-4xl font-bold md:text-5xl">
             About Yes Lord
           </h1>
@@ -130,10 +129,10 @@ export default function AboutPage() {
           </div>
         </div>
 
-        <h3 className="mt-20 mb-6 text-center text-2xl font-semibold tracking-[0.3em] text-white md:text-3xl">
+        <h3 className="mt-24 text-center text-2xl font-semibold tracking-[0.3em] text-white md:text-3xl">
           Faith. Fashion. Purpose.
         </h3>
-      
+      </div>
     </main>
   );
 }
