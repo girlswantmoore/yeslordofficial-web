@@ -12,12 +12,7 @@ export default function AboutPage() {
       className="min-h-screen bg-cover bg-center bg-no-repeat bg-fixed"
       style={{ backgroundImage: "url('/about.jpg')" }}
     >
-      <div className="min-h-screen bg-black/60 flex flex-col items-center px-6 pt-36 pb-10">
-        <img
-          src="/logo.png"
-          alt="Yes Lord"
-          className="mb-12 w-40 md:w-52"
-        />
+
 
 <div className="mx-auto max-w-4xl p-8 text-center text-white md:p-12">
           <h1 className="mb-10 text-4xl font-bold md:text-5xl">
@@ -138,7 +133,7 @@ export default function AboutPage() {
         <h3 className="mt-20 mb-6 text-center text-2xl font-semibold tracking-[0.3em] text-white md:text-3xl">
           Faith. Fashion. Purpose.
         </h3>
-      </div>
+      
     </main>
   );
 }

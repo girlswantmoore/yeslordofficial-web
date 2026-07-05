@@ -74,7 +74,7 @@ export const products = [
   {
     slug: "zip-up",
     name: "Yes Lord Zip-Up Hoodie",
-    price: 64.99,
+    price: 74.99,
     thumbnail: "/products/zip-up/zipup-orange-front.jpg",
     description:
       "Sold individually. Slight distressing on the bottom hem and hood. Sun-dried wash. Made with 100% cotton, 400 GSM. Cropped and boxy fit with distressed fabric. Made in China. Premium quality.",
