@@ -118,11 +118,11 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="flex min-h-[70vh] items-center justify-center px-6 text-center">
-        <h3 className="text-2xl font-semibold tracking-[0.3em] drop-shadow-[0_3px_12px_rgba(0,0,0,0.9)] md:text-3xl">
-          Faith. Fashion. Purpose.
-        </h3>
-      </section>
+<section className="px-6 pt-20 pb-12 text-center">
+  <h3 className="text-2xl font-semibold tracking-[0.35em] text-white drop-shadow-[0_3px_12px_rgba(0,0,0,0.9)] md:text-3xl">
+    Faith. Fashion. Purpose.
+  </h3>
+</section>
     </main>
   );
 }
