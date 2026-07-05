@@ -8,20 +8,21 @@ export default function AboutPage() {
   }, []);
 
   return (
-    <main
-      className="min-h-screen bg-cover bg-center bg-no-repeat bg-fixed"
-      style={{ backgroundImage: "url('/about.jpg')" }}
-    >
-      <div className="min-h-screen px-6 pt-40 pb-20 md:pt-52">
-        <div className="mx-auto max-w-4xl text-center text-white">
-          <h1 className="mb-10 text-4xl font-bold md:text-5xl">
+<main
+  className="relative min-h-screen bg-cover bg-center bg-no-repeat bg-fixed"
+  style={{ backgroundImage: "url('/about.jpg')" }}
+>
+  <div className="absolute inset-0 bg-black/55 backdrop-blur-[1px]" />
+<div className="relative z-10 min-h-screen px-6 pt-44 pb-24 md:pt-56">
+<div className="mx-auto max-w-4xl rounded-3xl border border-white/10 bg-black/35 px-8 py-12 text-center text-white backdrop-blur-md md:px-16 md:py-20">       
+   <h1 className="mb-10 text-4xl font-bold md:text-6xl md:text-8xl font-extrabold tracking-[0.45em]">
             About Yes Lord
           </h1>
 
-          <div className="space-y-8 text-base leading-9 md:text-lg">
+          <div className="space-y-8 text-lg leading-10 font-light text-white/90 md:text-lg">
 
-            <p className="text-2xl font-semibold">
-              Every life reaches a moment when certainty ends.
+<p className="text-3xl font-light tracking-wide">
+                Every life reaches a moment when certainty ends.
             </p>
 
             <p>
