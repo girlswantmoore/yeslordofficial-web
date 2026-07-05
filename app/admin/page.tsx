@@ -121,8 +121,7 @@ export default function AdminPage() {
 
             <div className="space-y-8">
               {filteredOrders.map((order) => (
-                <OrderCard key={order.id} order={order} />
-              ))}
+  <OrderCard key={order.id} order={order} password={password} />              ))}
             </div>
           </>
         )}
