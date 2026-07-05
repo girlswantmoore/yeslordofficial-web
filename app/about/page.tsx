@@ -9,16 +9,18 @@ export default function AboutPage() {
 
   return (
     <main
-      className="min-h-screen bg-cover bg-center bg-no-repeat bg-fixed"
+      className="min-h-screen bg-cover bg-center bg-no-repeat bg-fixed text-white"
       style={{ backgroundImage: "url('/about.jpg')" }}
     >
-      <div className="min-h-screen px-6 pt-44 pb-24 md:pt-56">
-        <div className="mx-auto max-w-4xl text-center text-white">
-          <p className="mb-12 text-2xl font-semibold italic text-stone-200 md:text-3xl">
-            About the brand...
-          </p>
+      <section className="flex min-h-screen items-center justify-center px-6 text-center">
+        <h1 className="text-4xl font-semibold italic drop-shadow-[0_3px_12px_rgba(0,0,0,0.9)] md:text-6xl">
+          About the brand...
+        </h1>
+      </section>
 
-          <div className="space-y-10 text-base leading-9 text-stone-100 drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)] md:text-lg">
+      <section className="px-6 py-32">
+        <div className="mx-auto max-w-4xl rounded-3xl bg-black/45 px-8 py-14 text-center backdrop-blur-md md:px-16 md:py-20">
+          <div className="space-y-10 text-base leading-9 text-stone-100 md:text-lg">
             <p className="text-2xl font-semibold md:text-3xl">
               Every life reaches a moment when certainty ends.
             </p>
@@ -114,11 +116,13 @@ export default function AboutPage() {
             </p>
           </div>
         </div>
+      </section>
 
-        <h3 className="mt-24 text-center text-2xl font-semibold tracking-[0.3em] text-stone-100 drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)] md:text-3xl">
+      <section className="flex min-h-[70vh] items-center justify-center px-6 text-center">
+        <h3 className="text-2xl font-semibold tracking-[0.3em] drop-shadow-[0_3px_12px_rgba(0,0,0,0.9)] md:text-3xl">
           Faith. Fashion. Purpose.
         </h3>
-      </div>
+      </section>
     </main>
   );
 }
