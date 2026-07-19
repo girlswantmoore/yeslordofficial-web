@@ -142,11 +142,20 @@ export default function OrderCard({
 
         <div>
           <h2 className="mb-3 font-semibold">Items</h2>
-          {order.items.map((item, index) => (
-            <p key={index} className="text-gray-300">
-              {item.quantity}× {item.name}
-            </p>
-          ))}
+          <div className="space-y-3">
+            {order.items.map((item, index) => (
+              <div key={index} className="text-gray-300">
+                <p>{item.quantity}× {item.name}</p>
+                {(item.color || item.size) && (
+                  <p className="text-sm text-gray-500">
+                    {item.color && `Color: ${item.color}`}
+                    {item.color && item.size && " · "}
+                    {item.size && `Size: ${item.size}`}
+                  </p>
+                )}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 

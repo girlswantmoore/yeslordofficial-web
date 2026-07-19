@@ -10,7 +10,7 @@ export default function Navbar() {
   return (
     <>
     <div className="fixed left-0 top-0 z-[60] w-full bg-white py-2 text-center text-xs font-semibold uppercase tracking-[0.25em] text-black">
-  Free shipping on orders $100+
+  25% off everything · Free shipping on orders $100+
 </div>
       <nav className="fixed left-0 top-8 z-50 w-full bg-black/70 backdrop-blur-md">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 text-white md:px-8 md:py-6">

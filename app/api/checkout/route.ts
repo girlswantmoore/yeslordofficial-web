@@ -1,18 +1,64 @@
 import { NextRequest, NextResponse } from "next/server";
 import Stripe from "stripe";
+import { products } from "../../../data/products";
+import { getSalePriceCents } from "../../../lib/pricing";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
 
 export async function POST(request: NextRequest) {
   const cart = await request.json();
 
-  const subtotal = cart.reduce(
-    (sum: number, item: any) => sum + item.price * item.quantity,
+  if (!Array.isArray(cart) || cart.length === 0) {
+    return NextResponse.json({ error: "Your cart is empty." }, { status: 400 });
+  }
+
+  let checkoutItems;
+
+  try {
+    checkoutItems = cart.map((item: unknown) => {
+      const cartItem = item as {
+        slug?: string;
+        color?: string;
+        size?: string;
+        quantity?: number;
+      };
+      const product = products.find(
+        (candidate) => candidate.slug === cartItem.slug
+      );
+      const color = product?.colors.find(
+        (candidate) => candidate.name === cartItem.color
+      );
+      const quantity = Number(cartItem.quantity);
+
+      if (
+        !product ||
+        !color ||
+        !cartItem.size ||
+        !product.sizes.includes(cartItem.size) ||
+        !Number.isInteger(quantity) ||
+        quantity < 1 ||
+        quantity > 20
+      ) {
+        throw new Error("INVALID_CART_ITEM");
+      }
+
+      return { product, color, size: cartItem.size, quantity };
+    });
+  } catch {
+    return NextResponse.json(
+      { error: "Your cart contains an invalid item." },
+      { status: 400 }
+    );
+  }
+
+  const subtotalCents = checkoutItems.reduce(
+    (sum, item) =>
+      sum + getSalePriceCents(item.product.price) * item.quantity,
     0
   );
 
   const shippingOptions =
-    subtotal >= 100
+    subtotalCents >= 10000
       ? [
           {
             shipping_rate_data: {
@@ -101,15 +147,20 @@ export async function POST(request: NextRequest) {
   const session = await stripe.checkout.sessions.create({
     mode: "payment",
 
-    line_items: cart.map((item: any) => ({
-      quantity: item.quantity,
+    line_items: checkoutItems.map(({ product, color, size, quantity }) => ({
+      quantity,
       price_data: {
         currency: "usd",
-        unit_amount: Math.round(item.price * 100),
+        unit_amount: getSalePriceCents(product.price),
         product_data: {
-          name: item.name,
-          description: `${item.color} / ${item.size}`,
-          images: [`${process.env.NEXT_PUBLIC_SITE_URL}${item.image}`],
+          name: product.name,
+          description: `${color.name} / ${size}`,
+          images: [`${process.env.NEXT_PUBLIC_SITE_URL}${color.front}`],
+          metadata: {
+            product_slug: product.slug,
+            color: color.name,
+            size,
+          },
         },
       },
     })),

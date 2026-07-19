@@ -1,12 +1,23 @@
 "use client";
 
 import { useCart } from "../../components/CartContext";
+import { products } from "../../data/products";
+import { getSalePrice, SALE_PERCENT } from "../../lib/pricing";
 
 export default function CartPage() {
   const { cart, removeFromCart, clearCart } = useCart();
 
-  const total = cart.reduce(
+  const priceFor = (slug: string, fallbackPrice: number) =>
+    getSalePrice(
+      products.find((product) => product.slug === slug)?.price ?? fallbackPrice
+    );
+
+  const originalTotal = cart.reduce(
     (sum, item) => sum + item.price * item.quantity,
+    0
+  );
+  const total = cart.reduce(
+    (sum, item) => sum + priceFor(item.slug, item.price) * item.quantity,
     0
   );
 
@@ -53,15 +64,28 @@ export default function CartPage() {
                     </button>
                   </div>
 
-                  <p className="text-xl">
-                    ${(item.price * item.quantity).toFixed(2)}
+                  <p className="text-right">
+                    <span className="block text-sm text-gray-500 line-through">
+                      ${(item.price * item.quantity).toFixed(2)}
+                    </span>
+                    <span className="block text-xl">
+                      ${(priceFor(item.slug, item.price) * item.quantity).toFixed(2)}
+                    </span>
                   </p>
                 </div>
               ))}
             </div>
 
             <div className="mt-12 flex flex-col items-end gap-6">
-              <p className="text-3xl">Total: ${total.toFixed(2)}</p>
+              <div className="text-right">
+                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#9FD6CC]">
+                  {SALE_PERCENT}% sale applied
+                </p>
+                <p className="mt-2 text-gray-500 line-through">
+                  ${originalTotal.toFixed(2)}
+                </p>
+                <p className="text-3xl">Total: ${total.toFixed(2)}</p>
+              </div>
 
               <button
                 onClick={async () => {

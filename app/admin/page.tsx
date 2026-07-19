@@ -20,6 +20,8 @@ export type Order = {
     name: string;
     quantity: number;
     amount: number;
+    color: string | null;
+    size: string | null;
   }[];
 };
 
