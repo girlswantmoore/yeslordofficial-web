@@ -1,5 +1,45 @@
 export const products = [
   {
+    slug: "wave-runner-short-sleeve",
+    name: "Wave Runner Short Sleeve",
+    price: 49.99,
+    thumbnail: "/products/wave-runners/waverunner-front.jpg",
+    description:
+      "A collaboration with @iamdjkid. The Wave Runner short sleeve tee features the Take It Up With God chest mark and a full Wave Runner graphic across the back.",
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    featured: true,
+    noDiscount: true,
+    colors: [
+      {
+        name: "Black",
+        swatch: ["#000000"],
+        front: "/products/wave-runners/waverunner-front.jpg",
+        back: "/products/wave-runners/waverunner-back.jpg",
+      },
+    ],
+  },
+
+  {
+    slug: "wave-runner-long-sleeve",
+    name: "Wave Runner Long Sleeve",
+    price: 59.99,
+    thumbnail: "/products/wave-runners/waverunner-long-front.JPG",
+    description:
+      "A collaboration with @iamdjkid. The Wave Runner long sleeve tee features the Take It Up With God chest mark, sleeve graphics, and a full Wave Runner graphic across the back.",
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    featured: true,
+    noDiscount: true,
+    colors: [
+      {
+        name: "Black",
+        swatch: ["#000000"],
+        front: "/products/wave-runners/waverunner-long-front.JPG",
+        back: "/products/wave-runners/waverunner-long-back.JPG",
+      },
+    ],
+  },
+
+  {
     slug: "classic-tee",
     name: "Yes Lord Classic Tee",
     price: 44.99,
@@ -127,7 +167,7 @@ export const products = [
       "Classic 5-panel trucker cap made with 65% polyester and 35% cotton. Features a seamless front panel with full buckram, matching color sweatband, plastic adjustable snap, and “Yes Lord” embroidery on the front.",
     sizes: ["One Size"],
     colors: [
-      { name: "Black", swatch: ["#000000"], front: "/products/trucker-hat/trucker-black.jpg" },
+      { name: "Black", swatch: ["#000000"], front: "/products/trucker-hat/trucker-black.jpg", soldOut: true },
       { name: "Blue", swatch: ["#2563EB"], front: "/products/trucker-hat/trucker-blue.jpg" },
       { name: "Green", swatch: ["#166534"], front: "/products/trucker-hat/trucker-green.jpg" },
       { name: "Red", swatch: ["#DC2626"], front: "/products/trucker-hat/trucker-red.jpg" },
@@ -142,7 +182,7 @@ export const products = [
     description: "Premium Yes Lord crew socks designed for everyday comfort. Final Sale.",
     sizes: ["One Size"],
     colors: [
-      { name: "White", swatch: ["#FFFFFF"], front: "/products/socks/socks-white.jpg" },
+      { name: "White", swatch: ["#FFFFFF"], front: "/products/socks/socks-white.jpg", soldOut: true },
     ],
   },
 ];

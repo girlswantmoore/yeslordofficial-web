@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "../components/Navbar";
 import { CartProvider } from "../components/CartContext";
 import Footer from "../components/Footer";
+import AnalyticsTracker from "../components/AnalyticsTracker";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -53,6 +54,7 @@ export default function RootLayout({
     >
       <body className="min-h-full bg-black text-white">
         <CartProvider>
+          <AnalyticsTracker />
           <Navbar />
           {children}
           <Footer />

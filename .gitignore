@@ -13,6 +13,9 @@
 # testing
 /coverage
 
+# local first-party analytics (production uses Upstash Redis)
+/.data/
+
 # next.js
 /.next/
 /out/

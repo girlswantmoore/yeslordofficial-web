@@ -16,6 +16,25 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+## Admin analytics
+
+The admin dashboard at `/admin` includes Orders, User Engagement, and Sales
+Analytics. Engagement events are anonymous and include page views, product
+views, session/visitor IDs, time on page, scroll depth, and exit pages.
+
+During local development, events are written to `.data/analytics.json`. For a
+deployed site, create an Upstash Redis database and add these environment
+variables to the deployment:
+
+```bash
+UPSTASH_REDIS_REST_URL=https://your-database.upstash.io
+UPSTASH_REDIS_REST_TOKEN=your-token
+```
+
+The analytics endpoint automatically switches to Redis when both values are
+present. Existing variables `ADMIN_PASSWORD` and `STRIPE_SECRET_KEY` are also
+required for the admin dashboard.
+
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.

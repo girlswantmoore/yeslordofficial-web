@@ -16,7 +16,7 @@ export async function POST(request: NextRequest) {
   }
 
   const sessions = await stripe.checkout.sessions.list({
-    limit: 25,
+    limit: 100,
     expand: ["data.customer_details", "data.shipping_cost"],
   });
 

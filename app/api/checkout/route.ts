@@ -29,6 +29,14 @@ export async function POST(request: NextRequest) {
         (candidate) => candidate.name === cartItem.color
       );
       const quantity = Number(cartItem.quantity);
+      const colorSoldOut =
+        color && "soldOut" in color && color.soldOut;
+      const soldOutSizes =
+        color &&
+        "soldOutSizes" in color &&
+        Array.isArray(color.soldOutSizes)
+          ? color.soldOutSizes
+          : [];
 
       if (
         !product ||
@@ -37,7 +45,9 @@ export async function POST(request: NextRequest) {
         !product.sizes.includes(cartItem.size) ||
         !Number.isInteger(quantity) ||
         quantity < 1 ||
-        quantity > 20
+        quantity > 20 ||
+        colorSoldOut ||
+        soldOutSizes.includes(cartItem.size)
       ) {
         throw new Error("INVALID_CART_ITEM");
       }
@@ -53,7 +63,11 @@ export async function POST(request: NextRequest) {
 
   const subtotalCents = checkoutItems.reduce(
     (sum, item) =>
-      sum + getSalePriceCents(item.product.price) * item.quantity,
+      sum +
+      (("noDiscount" in item.product && item.product.noDiscount
+        ? Math.round(item.product.price * 100)
+        : getSalePriceCents(item.product.price)) *
+        item.quantity),
     0
   );
 
@@ -151,7 +165,10 @@ export async function POST(request: NextRequest) {
       quantity,
       price_data: {
         currency: "usd",
-        unit_amount: getSalePriceCents(product.price),
+        unit_amount:
+          "noDiscount" in product && product.noDiscount
+            ? Math.round(product.price * 100)
+            : getSalePriceCents(product.price),
         product_data: {
           name: product.name,
           description: `${color.name} / ${size}`,

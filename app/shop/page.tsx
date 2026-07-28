@@ -1,7 +1,15 @@
 import { products } from "../../data/products";
 import { getSalePrice, SALE_PERCENT } from "../../lib/pricing";
+import FeaturedProducts from "../../components/FeaturedProducts";
 
 export default function ShopPage() {
+  const featuredProducts = products.filter(
+    (product) => "featured" in product && product.featured,
+  );
+  const standardProducts = products.filter(
+    (product) => !("featured" in product && product.featured),
+  );
+
   return (
     <main className="min-h-screen bg-black text-white">
       <section className="px-8 pt-36 pb-28">
@@ -9,17 +17,29 @@ export default function ShopPage() {
           SHOP
         </h1>
         <p className="-mt-10 mb-14 text-center text-sm font-semibold uppercase tracking-[0.3em] text-[#9FD6CC]">
-          {SALE_PERCENT}% off everything
+          {SALE_PERCENT}% off select styles
         </p>
 
+        <FeaturedProducts products={featuredProducts} />
+
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
-          {products.map((product) => (
+          {standardProducts.map((product) => {
+            const isSoldOut = product.colors.every(
+              (color) => "soldOut" in color && color.soldOut,
+            );
+
+            return (
             <a
               key={product.slug}
               href={`/shop/${product.slug}`}
               className="group"
             >
-              <div className="aspect-[3/4] overflow-hidden rounded-lg bg-white">
+              <div className="relative aspect-[3/4] overflow-hidden rounded-lg bg-white">
+                {isSoldOut && (
+                  <span className="absolute left-4 top-4 z-10 rounded-full bg-black px-4 py-2 text-[0.65rem] font-bold uppercase tracking-[0.25em] text-white">
+                    Sold out
+                  </span>
+                )}
                 <img
                   src={product.thumbnail}
                   alt={product.name}
@@ -39,7 +59,8 @@ export default function ShopPage() {
                 </span>
               </p>
             </a>
-          ))}
+            );
+          })}
         </div>
       </section>
     </main>
