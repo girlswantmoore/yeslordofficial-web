@@ -1,6 +1,7 @@
 "use client";
 
 import { use, useState } from "react";
+import Link from "next/link";
 import { products } from "../../../data/products";
 import { useCart } from "../../../components/CartContext";
 import { getSalePrice, SALE_PERCENT } from "../../../lib/pricing";
@@ -40,6 +41,15 @@ const soldOutSizes: string[] =
 
   const image =
     view === "back" && hasBack ? selectedColor.back : selectedColor.front;
+  const relatedSlug =
+    product.slug === "wave-runner-short-sleeve"
+      ? "wave-runner-long-sleeve"
+      : product.slug === "wave-runner-long-sleeve"
+        ? "wave-runner-short-sleeve"
+        : null;
+  const relatedProduct = relatedSlug
+    ? products.find((item) => item.slug === relatedSlug)
+    : null;
 
   return (
     <main className="min-h-screen bg-black text-white">
@@ -210,6 +220,41 @@ const soldOutSizes: string[] =
           <p className="mt-10 leading-8 text-gray-400">
             {product.description}
           </p>
+
+          {relatedProduct && (
+            <div className="mt-10 border-t border-zinc-800 pt-8">
+              <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-[#9FD6CC]">
+                Also available
+              </p>
+              <Link
+                href={`/shop/${relatedProduct.slug}`}
+                className="group grid grid-cols-[110px_1fr] items-center gap-5 rounded-xl border border-zinc-800 bg-[#0b0b0b] p-3 transition hover:border-[#9FD6CC]"
+              >
+                <div className="h-32 overflow-hidden rounded-lg bg-white">
+                  <img
+                    src={relatedProduct.thumbnail}
+                    alt={relatedProduct.name}
+                    className={`h-full w-full object-contain transition duration-500 ${
+                      relatedProduct.slug === "wave-runner-long-sleeve"
+                        ? "scale-[1.55] group-hover:scale-[1.62]"
+                        : "group-hover:scale-105"
+                    }`}
+                  />
+                </div>
+                <div>
+                  <p className="text-lg font-semibold transition group-hover:text-[#9FD6CC]">
+                    {relatedProduct.name}
+                  </p>
+                  <p className="mt-2 text-gray-300">
+                    ${relatedProduct.price.toFixed(2)}
+                  </p>
+                  <p className="mt-3 text-xs uppercase tracking-[0.2em] text-gray-500">
+                    View this style →
+                  </p>
+                </div>
+              </Link>
+            </div>
+          )}
         </div>
       </section>
     </main>
