@@ -12,7 +12,7 @@ export default function IntroVideo() {
       role="dialog"
       aria-label="Yes Lord introduction"
       aria-modal="true"
-      className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 px-5 py-8"
+      className="fixed inset-0 z-[100] flex items-center justify-center overflow-hidden bg-black"
     >
       <video
         autoPlay
@@ -20,7 +20,7 @@ export default function IntroVideo() {
         playsInline
         preload="auto"
         onEnded={() => setVisible(false)}
-        className="max-h-[72vh] w-auto max-w-[min(88vw,30rem)] rounded-xl object-contain shadow-[0_0_60px_rgba(255,255,255,0.08)]"
+        className="h-[100dvh] w-[100vw] object-contain md:h-[calc(100dvh-2rem)] md:w-[calc(100vw-2rem)] md:rounded-xl md:shadow-[0_0_70px_rgba(255,255,255,0.1)]"
       >
         <source src="/yes-lord-intro.m4v" type="video/mp4" />
       </video>
