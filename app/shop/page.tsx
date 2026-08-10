@@ -1,5 +1,4 @@
 import { products } from "../../data/products";
-import { getSalePrice, SALE_PERCENT } from "../../lib/pricing";
 import FeaturedProducts from "../../components/FeaturedProducts";
 
 export default function ShopPage() {
@@ -16,9 +15,6 @@ export default function ShopPage() {
         <h1 className="mb-16 text-center text-5xl font-bold tracking-[0.35em]">
           SHOP
         </h1>
-        <p className="-mt-10 mb-14 text-center text-sm font-semibold uppercase tracking-[0.3em] text-[#9FD6CC]">
-          {SALE_PERCENT}% off select styles
-        </p>
 
         <FeaturedProducts products={featuredProducts} />
 
@@ -50,14 +46,7 @@ export default function ShopPage() {
               <h2 className="mt-5 text-xl font-semibold group-hover:text-gray-300">
                 {product.name}
               </h2>
-              <p className="mt-2 flex items-baseline gap-3">
-                <span className="text-sm text-gray-500 line-through">
-                  ${product.price.toFixed(2)}
-                </span>
-                <span className="font-semibold text-[#9FD6CC]">
-                  ${getSalePrice(product.price).toFixed(2)}
-                </span>
-              </p>
+              <p className="mt-2 font-semibold">${product.price.toFixed(2)}</p>
             </a>
             );
           })}

@@ -8,7 +8,6 @@ export const products = [
       "A collaboration with @iamdjkid. The Wave Runner short sleeve tee features the Take It Up With God chest mark and a full Wave Runner graphic across the back.",
     sizes: ["S", "M", "L", "XL", "XXL"],
     featured: true,
-    noDiscount: true,
     colors: [
       {
         name: "Black",
@@ -28,7 +27,6 @@ export const products = [
       "A collaboration with @iamdjkid. The Wave Runner long sleeve tee features the Take It Up With God chest mark, sleeve graphics, and a full Wave Runner graphic across the back.",
     sizes: ["S", "M", "L", "XL", "XXL"],
     featured: true,
-    noDiscount: true,
     colors: [
       {
         name: "Black",

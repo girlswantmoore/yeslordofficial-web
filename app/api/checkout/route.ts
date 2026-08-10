@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import Stripe from "stripe";
 import { products } from "../../../data/products";
-import { getSalePriceCents } from "../../../lib/pricing";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
 
@@ -63,11 +62,7 @@ export async function POST(request: NextRequest) {
 
   const subtotalCents = checkoutItems.reduce(
     (sum, item) =>
-      sum +
-      (("noDiscount" in item.product && item.product.noDiscount
-        ? Math.round(item.product.price * 100)
-        : getSalePriceCents(item.product.price)) *
-        item.quantity),
+      sum + Math.round(item.product.price * 100) * item.quantity,
     0
   );
 
@@ -165,10 +160,7 @@ export async function POST(request: NextRequest) {
       quantity,
       price_data: {
         currency: "usd",
-        unit_amount:
-          "noDiscount" in product && product.noDiscount
-            ? Math.round(product.price * 100)
-            : getSalePriceCents(product.price),
+        unit_amount: Math.round(product.price * 100),
         product_data: {
           name: product.name,
           description: `${color.name} / ${size}`,

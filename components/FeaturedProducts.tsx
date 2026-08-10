@@ -49,9 +49,6 @@ export default function FeaturedProducts({
               {product.name}
             </h2>
             <p className="mt-1 font-semibold">${product.price.toFixed(2)}</p>
-            <p className="mt-1.5 text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-[#9FD6CC]">
-              Excluded from site-wide sale
-            </p>
           </div>
         </a>
       ))}

@@ -4,7 +4,6 @@ import { use, useState } from "react";
 import Link from "next/link";
 import { products } from "../../../data/products";
 import { useCart } from "../../../components/CartContext";
-import { getSalePrice, SALE_PERCENT } from "../../../lib/pricing";
 
 export default function ProductPage({
   params,
@@ -28,8 +27,6 @@ export default function ProductPage({
   const [view, setView] = useState<"front" | "back">("front");
 
   const selectedColor = product.colors[selectedColorIndex];
-  const noDiscount = "noDiscount" in product && product.noDiscount === true;
-
   const hasBack = "back" in selectedColor && selectedColor.back;
   const isSoldOut = "soldOut" in selectedColor && selectedColor.soldOut;
 
@@ -111,24 +108,7 @@ const soldOutSizes: string[] =
           <h1 className="mb-6 text-5xl font-bold">{product.name}</h1>
 
           <div className="mb-10">
-            {!noDiscount && (
-              <p className="mb-2 text-sm font-semibold uppercase tracking-[0.25em] text-[#9FD6CC]">
-                {SALE_PERCENT}% off
-              </p>
-            )}
-            <p className="flex items-baseline gap-4 text-3xl">
-              {!noDiscount && (
-                <span className="text-xl text-gray-500 line-through">
-                  ${product.price.toFixed(2)}
-                </span>
-              )}
-              <span>
-                ${(noDiscount
-                  ? product.price
-                  : getSalePrice(product.price)
-                ).toFixed(2)}
-              </span>
-            </p>
+            <p className="text-3xl">${product.price.toFixed(2)}</p>
           </div>
 
           <h2 className="mb-4 text-sm uppercase tracking-[0.3em] text-gray-400">

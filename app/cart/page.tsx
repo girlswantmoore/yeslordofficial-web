@@ -2,23 +2,15 @@
 
 import { useCart } from "../../components/CartContext";
 import { products } from "../../data/products";
-import { getSalePrice, SALE_PERCENT } from "../../lib/pricing";
 
 export default function CartPage() {
   const { cart, removeFromCart, clearCart } = useCart();
 
   const priceFor = (slug: string, fallbackPrice: number) => {
     const product = products.find((candidate) => candidate.slug === slug);
-    const price = product?.price ?? fallbackPrice;
-    return product && "noDiscount" in product && product.noDiscount
-      ? price
-      : getSalePrice(price);
+    return product?.price ?? fallbackPrice;
   };
 
-  const originalTotal = cart.reduce(
-    (sum, item) => sum + item.price * item.quantity,
-    0
-  );
   const total = cart.reduce(
     (sum, item) => sum + priceFor(item.slug, item.price) * item.quantity,
     0
@@ -68,11 +60,6 @@ export default function CartPage() {
                   </div>
 
                   <p className="text-right">
-                    {priceFor(item.slug, item.price) !== item.price && (
-                      <span className="block text-sm text-gray-500 line-through">
-                        ${(item.price * item.quantity).toFixed(2)}
-                      </span>
-                    )}
                     <span className="block text-xl">
                       ${(priceFor(item.slug, item.price) * item.quantity).toFixed(2)}
                     </span>
@@ -83,12 +70,6 @@ export default function CartPage() {
 
             <div className="mt-12 flex flex-col items-end gap-6">
               <div className="text-right">
-                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#9FD6CC]">
-                  {SALE_PERCENT}% sale applied to eligible items
-                </p>
-                <p className="mt-2 text-gray-500 line-through">
-                  ${originalTotal.toFixed(2)}
-                </p>
                 <p className="text-3xl">Total: ${total.toFixed(2)}</p>
               </div>
 
