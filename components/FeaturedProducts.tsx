@@ -13,7 +13,7 @@ export default function FeaturedProducts({
   products: FeaturedProduct[];
 }) {
   return (
-    <div className="mx-auto mb-16 grid max-w-2xl grid-cols-1 gap-5 md:grid-cols-2">
+    <div className="mx-auto mb-16 grid max-w-2xl grid-cols-2 gap-4 sm:gap-5">
       {products.map((product) => (
         <a
           key={product.slug}
@@ -45,7 +45,7 @@ export default function FeaturedProducts({
             </div>
           </div>
           <div className="relative px-2.5 pb-2.5">
-            <h2 className="mt-3 text-lg font-semibold transition group-hover:text-[#9FD6CC]">
+            <h2 className="mt-3 text-sm font-semibold transition group-hover:text-[#9FD6CC] sm:text-lg">
               {product.name}
             </h2>
             <p className="mt-1 font-semibold">${product.price.toFixed(2)}</p>

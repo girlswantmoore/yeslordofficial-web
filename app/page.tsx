@@ -53,7 +53,7 @@ export default function Home() {
 
         <FeaturedProducts products={featuredProducts} />
 
-        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mx-auto grid max-w-7xl grid-cols-2 gap-x-4 gap-y-10 md:gap-x-10 lg:grid-cols-3">
           {standardProducts.map((product) => {
             const isSoldOut = product.colors.every(
               (color) => "soldOut" in color && color.soldOut,
@@ -78,7 +78,7 @@ export default function Home() {
                 />
               </div>
 
-              <h2 className="mt-2 text-xl font-semibold group-hover:text-gray-300">
+              <h2 className="mt-2 text-sm font-semibold group-hover:text-gray-300 sm:text-xl">
                 {product.name}
               </h2>
               <p className="mt-2 font-semibold">${product.price.toFixed(2)}</p>
