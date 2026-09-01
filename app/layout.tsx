@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
+import { headers } from "next/headers";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "../components/Navbar";
 import { CartProvider } from "../components/CartContext";
-import Footer from "../components/Footer";
-import AnalyticsTracker from "../components/AnalyticsTracker";
+import SiteChrome from "../components/SiteChrome";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -42,11 +41,14 @@ export const metadata: Metadata = {
     images: ["/og-image.jpg"],
   },
 };
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const maintenancePage =
+    (await headers()).get("x-yeslord-maintenance-page") === "1";
+
   return (
     <html
       lang="en"
@@ -54,10 +56,7 @@ export default function RootLayout({
     >
       <body className="min-h-full bg-black text-white">
         <CartProvider>
-          <AnalyticsTracker />
-          <Navbar />
-          {children}
-          <Footer />
+          <SiteChrome maintenancePage={maintenancePage}>{children}</SiteChrome>
         </CartProvider>
       </body>
     </html>

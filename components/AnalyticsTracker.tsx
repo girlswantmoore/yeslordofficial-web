@@ -16,7 +16,7 @@ export default function AnalyticsTracker() {
   const pathname = usePathname();
 
   useEffect(() => {
-    if (pathname.startsWith("/admin")) return;
+    if (pathname.startsWith("/admin") || pathname === "/coming-soon") return;
 
     const sessionId = id(sessionStorage, "yl_session_id");
     const visitorId = id(localStorage, "yl_visitor_id");
