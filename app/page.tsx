@@ -1,6 +1,5 @@
 import { products } from "../data/products";
 import FeaturedProducts from "../components/FeaturedProducts";
-import IntroVideo from "../components/IntroVideo";
 
 export default function Home() {
   const featuredProducts = products.filter(
@@ -12,7 +11,6 @@ export default function Home() {
 
   return (
     <main className="bg-black text-white">
-      <IntroVideo />
       {/* Hero */}
       <section className="relative h-screen overflow-hidden">
         <img
