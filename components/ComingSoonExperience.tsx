@@ -146,7 +146,7 @@ export default function ComingSoonExperience() {
         </div>
 
         <p className="text-[0.55rem] uppercase tracking-[0.28em] text-white/45">
-          Website under reconstruction · Season 2026
+          Website under reconstruction · Fall 2026
         </p>
       </section>
 
