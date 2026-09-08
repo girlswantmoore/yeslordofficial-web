@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { FormEvent, useEffect, useState } from "react";
 
-const LAUNCH_TIME = new Date("2026-09-13T09:13:00-04:00").getTime();
+const LAUNCH_TIME = new Date("2026-09-20T09:20:00-04:00").getTime();
 
 type TimeLeft = {
   days: number;
@@ -125,7 +125,7 @@ export default function ComingSoonExperience() {
 
             <div className="mt-8 max-w-2xl border-y border-white/20 bg-black/20 py-5 text-center backdrop-blur-sm sm:mt-10 sm:py-6">
               <p className="mb-4 text-[0.6rem] uppercase tracking-[0.35em] text-white/65">
-                Coming 13 September · 9:13 AM ET
+                Coming 20 September · 9:20 AM ET
               </p>
               <div className="flex">
                 {time ? (
